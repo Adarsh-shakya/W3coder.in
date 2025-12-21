@@ -18,7 +18,7 @@ const Navbar = ({setSelectedSubject}) => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <h1>Technical Notes</h1>
+          <h1>W3coder</h1>
         </div>
           <button className="navbar-toggle" onClick={toggleMenu}>
           &#9776; {/* Hamburger icon */}

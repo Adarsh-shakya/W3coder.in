@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section logo">
-          <h2>The <span className="highlight">Shakya</span></h2>
+          <h2>W3<span className="highlight">coder</span></h2>
           <p>"Learn. Reflect. Rise."</p>
-          <p>&copy; 2025 The Shakya</p>
+          <p>&copy; 2025 w3coder</p>
         </div>
 
         <div className="footer-section links">
@@ -24,7 +24,7 @@ const Footer = () => {
 
         <div className="footer-section contact">
           <h3>Contact</h3>
-          <p>Email: theshakya@email.com</p>
+          <p>Email: w3coder@email.com</p>
           <p>Phone: +91-XXXXXXXXXX</p>
           <p>Etah, Uttar Pradesh</p>
           <div className="socials">
