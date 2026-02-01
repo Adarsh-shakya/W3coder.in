@@ -1,4 +1,4 @@
-import './Rightbar.css';
+import '../Styles/Rightbar.css';
 
 const Rightbar = () => {
   return (

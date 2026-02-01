@@ -1,0 +1,62 @@
+/* Container for the 3 columns */
+.course-page-container {
+  display: flex; /* Flexbox magic */
+  width: 100%;
+  min-height: 90vh; /* Footer ke liye jagah chhodne ke liye */
+  background-color: #f9f9f9;
+}
+
+/* 1. Left Sidebar */
+.layout-sidebar {
+  width: 200px; /* Fixed width */
+  flex-shrink: 0; /* Shrink nahi hoga */
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+  height: calc(100vh - 60px); /* Screen height minus Navbar height */
+  overflow-y: auto; /* Scrollable if content is long */
+  position: sticky;
+  top: 60px; /* Navbar ke neeche chipka rahega */
+}
+
+/* 2. Main Content (Middle) */
+.layout-content {
+  flex: 1; /* Baki bachi hui saari jagah le lega */
+  padding: 10px 20px;
+  background-color: #ffffff;
+  overflow-y: auto; /* Internal scrolling */
+  max-width: 1000px; /* Text bahut jyada fail na jaye */
+}
+
+/* 3. Right Sidebar */
+.layout-rightbar {
+  width: 200px; /* Fixed width */
+  flex-shrink: 0;
+  background-color: #f8f9fa;
+  border-left: 1px solid #ddd;
+  padding: 15px;
+  display: block; /* Desktop par dikhega */
+}
+
+/* --- MOBILE RESPONSIVE (Phone ke liye) --- */
+@media screen and (max-width: 768px) {
+  .course-page-container {
+    flex-direction: column; /* Sab ek ke neeche ek aa jayenge */
+  }
+
+  .layout-sidebar, 
+  .layout-rightbar {
+    width: 100%; /* Pura width lenge mobile par */
+    height: auto;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .layout-rightbar {
+    display: none; /* Mobile par Rightbar chhupa sakte ho agar chaho */
+  }
+  
+  .layout-content {
+    padding: 15px;
+  }
+}

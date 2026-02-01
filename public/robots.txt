@@ -1,0 +1,49 @@
+//Bad me SEO ke liye
+
+
+w3coder-project/
+├── public/
+│   ├── vite.svg
+│   ├── sitemap.xml          # (बाद में SEO के लिए)
+│   └── robots.txt           # (बाद में SEO के लिए)
+│
+├── src/
+│   ├── assets/              # Images, Logos, Icons
+│   │   ├── images/          # डायग्राम और फोटो यहाँ रखें
+│   │   └── icons/
+│   │
+│   ├── components/          # Reusable UI Parts (जो हर पेज पर दिखेंगे)
+│   │   ├── Navbar.jsx       # Top Navigation
+│   │   ├── Sidebar.jsx      # Left Menu (Links)
+│   │   ├── Rightbar.jsx     # Ads / Extra Links
+│   │   ├── Footer.jsx
+│   │   └── SEO.jsx          # (Google Ranking के लिए बहुत जरुरी)
+│   │
+│   ├── pages/               # असली पढाई का कंटेंट (Study Content)
+│   │   ├── Home.jsx         # Landing Page (Welcome page)
+│   │   ├── Java/            # Java के सारे पेज यहाँ
+│   │   │   ├── JavaBasics.jsx
+│   │   │   ├── JavaFlowControl.jsx
+│   │   │   └── JavaMethods.jsx
+│   │   ├── Python/          # Python के सारे पेज यहाँ
+│   │   │   ├── PythonFundamentals.jsx
+│   │   │   └── PythonFunctions.jsx
+│   │   └── HTML/            # HTML के सारे पेज यहाँ
+│   │       ├── HTMLBasics.jsx
+│   │       └── HTMLEditors.jsx
+│   │
+│   ├── styles/              # CSS Files
+│   │   ├── App.css          # Global Styles
+│   │   ├── Navbar.css
+│   │   ├── Sidebar.css
+│   │   └── Content.css      # पढाई वाले पेजों की डिजाइन
+│   │
+│   ├── App.jsx              # यहाँ Routes और Layout (Navbar/Sidebar) सेट होंगे
+│   ├── main.jsx             # Entry Point (HelmetProvider यहाँ लगेगा)
+│   └── index.css            # Reset & Base Styles
+│
+├── .gitignore
+├── index.html               # Main HTML (Title यहाँ भी बदलें)
+├── package.json
+├── vite.config.js
+└── README.md
