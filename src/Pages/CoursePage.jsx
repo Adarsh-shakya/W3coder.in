@@ -13,6 +13,7 @@ import { htmlData } from '../data/htmlData';
 import { javascriptData } from '../data/javascriptData';
 import { cssData } from '../data/cssData';
 
+
 // CSS File (Niche diya hai code iska)
 import '../Styles/CoursePage.css'; 
 

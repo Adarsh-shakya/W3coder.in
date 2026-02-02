@@ -10,6 +10,8 @@ import Footer from "./Components/Footer.jsx";
 import Home from "./Pages/Home.jsx";        // Landing Page
 import CoursePage from "./Pages/CoursePage.jsx"; // Main Study Page (Jisme Sidebar hoga)
 
+import PrivacyPolicy from "./Components/PrivacyPolicy.jsx";
+
 import "./Styles/App.css"; // Global Styles
 
 const App = () => {
@@ -32,6 +34,7 @@ const App = () => {
                 :topic?  = intro/syntax (Question mark ? ka matlab hai ye optional hai)
             */}
             <Route path="/course/:subject/:topic?" element={<CoursePage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
             {/* Route 3: 404 Page (Agar koi galat link dale) */}
             <Route path="*" element={<div style={{padding:'50px'}}>Page Not Found</div>} />
