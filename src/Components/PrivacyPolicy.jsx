@@ -1,5 +1,5 @@
 import React from 'react';
-///import '../Styles/CoursePage.css'; // अपनी CSS फाइल का पाथ सही रखें
+
 
 const PrivacyPolicy = () => {
   return (
