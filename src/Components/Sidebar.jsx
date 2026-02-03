@@ -161,7 +161,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Styles/sidebar.css"; // Apki purani CSS file
+import "../Styles/Sidebar.css"; // Apki purani CSS file
 
 // Ab hum Props use karenge (subjectData aur activeTopicId)
 // Ye data CoursePage.jsx se aa raha hai
