@@ -77,8 +77,7 @@
     .navbar-menu {
       overflow-x: auto;
       gap: 1.2rem;
-      width: 89%;
-      
+      width: 100%;
       background-color: black;
       white-space: nowrap;           /* Ensure items stay in one line */
       scrollbar-width: none;         /* Firefox */
