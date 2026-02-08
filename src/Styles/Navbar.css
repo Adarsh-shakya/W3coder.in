@@ -79,8 +79,8 @@
       gap: 1.2rem;
       width: 100%;
       background-color: black;
-      white-space: nowrap;           /* Ensure items stay in one line */
-      scrollbar-width: none;         /* Firefox */
+      white-space: nowrap;           
+      scrollbar-width: none;         
       -ms-overflow-style: none;
     }
 
@@ -102,12 +102,12 @@
       display: block;
       border: none;
       color: #fff;
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       background-color: black;
       cursor: pointer;
-      position: absolute;
-      top: 108px;
-      left: 5px;
+      
+      
+      
       
     }
   
