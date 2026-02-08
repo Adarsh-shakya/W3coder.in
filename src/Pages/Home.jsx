@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import heroImg from "../assets/images/Img_home.png";
+import heroImg from "../assets/images/Img_home.webp";
 import "../Styles/Home.css";
 import SEO from "../SEO.jsx";
 
