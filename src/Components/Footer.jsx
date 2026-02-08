@@ -14,21 +14,20 @@ const Footer = () => {
         </div>
 
         <div className="footer-section links">
-          <h3>Quick Links</h3>
-          <ul>
-           <Link to="/privacy-policy">Privacy Policy</Link>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/Terms&Conditions">Terms and Conditions</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-            <li><a href="Disclaimer">Disclaimer</a></li>
-          </ul>
-        </div>
-
+  <h3>Quick Links</h3>
+  <ul>
+    <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+    <li><Link to="/about">About Us</Link></li>
+    <li><Link to="/contact">Contact Us</Link></li>
+    <li><Link to="/terms-conditions">Terms and Conditions</Link></li>
+    <li><Link to="/disclaimer">Disclaimer</Link></li>
+  </ul>
+</div>
         <div className="footer-section contact">
           <h3>Contact</h3>
-          <p>Email: w3coder@email.com</p>
-          <p>Phone: +91-XXXXXXXXXX</p>
-          <p>Etah, Uttar Pradesh</p>
+          <p>Email: w3coder.official@gmail.com</p>
+          <p>Phone: +91-6395300903</p>
+          <p>Kasganj, Uttar Pradesh</p>
           <div className="socials">
             <a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
             <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"><FaGithub /></a>

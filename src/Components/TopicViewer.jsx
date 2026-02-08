@@ -1,6 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async'; // SEO ke liye
-// CSS file import karna na bhulein, jisme apki purani styles thin
+import { Helmet } from 'react-helmet-async'; 
 import '../Styles/Notes.css'; 
 
 const TopicViewer = ({ topicData }) => {

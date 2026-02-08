@@ -1,22 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import heroImg from "../assets/images/Img_home.png";
 import "../Styles/Home.css";
+import SEO from "../SEO.jsx";
 
 const Home = () => {
   return (
     <div className="home-container">
 
       {/* SEO */}
-      <Helmet>
-        <title>W3Coder - Learn Java, Python, HTML, CSS & JS Free</title>
-        <meta
-          name="description"
-          content="Free coding tutorials for beginners. Learn Java, Python, Web Development and more at W3Coder."
-        />
-      </Helmet>
-
+     <SEO 
+  title="W3Coder - Learn Java, Python, HTML, CSS & JS Free"
+  description="Free coding tutorials for beginners. Learn Java, Python, Web Development and more at W3Coder."
+  name="W3Coder Team"
+  type="website"
+/>
       {/* HERO IMAGE */}
       <div className="hero-image">
          <img

@@ -161,10 +161,9 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Styles/Sidebar.css"; // Apki purani CSS file
+import "../Styles/Sidebar.css"; 
 
-// Ab hum Props use karenge (subjectData aur activeTopicId)
-// Ye data CoursePage.jsx se aa raha hai
+
 const Sidebar = ({ subjectData, activeTopicId }) => {
   
   // Agar data load nahi hua (Safety Check)
@@ -184,9 +183,7 @@ const Sidebar = ({ subjectData, activeTopicId }) => {
         {subjectData.topics.map((topic, index) => (
           <li key={index} className="sidebar-li">
             
-            {/* DYNAMIC LINK GENERATION:
-                Link banega: /course / java / basics 
-            */}
+           
             <Link 
               to={`/course/${subjectData.subjectCode}/${topic.id}`} 
               className={topic.id === activeTopicId ? "active" : ""}

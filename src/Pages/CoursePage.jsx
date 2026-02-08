@@ -2,9 +2,9 @@ import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 
 // Components
-import TopicViewer from '../Components/TopicViewer'; // Path check kar lena
+import TopicViewer from '../Components/TopicViewer'; 
 import Sidebar from '../Components/Sidebar';
-import Rightbar from '../Components/Rightbar'; // Rightbar import kiya
+import Rightbar from '../Components/Rightbar'; 
 
 // Data
 import { javaData } from '../data/javaData'; 
@@ -14,7 +14,7 @@ import { javascriptData } from '../data/javascriptData';
 import { cssData } from '../data/cssData';
 
 
-// CSS File (Niche diya hai code iska)
+
 import '../Styles/CoursePage.css'; 
 
 const dataMap = {

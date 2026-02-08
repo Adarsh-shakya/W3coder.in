@@ -47,3 +47,22 @@ w3coder-project/
 ├── package.json
 ├── vite.config.js
 └── README.md
+
+---------------------------------------------------------
+Main.jsx
+  |
+  |
+globle.css  
+app.js--|-Navbar------|-navbar.css
+        |-Footer------|-footer.css
+        |
+        |-Home--------|-Home.css
+        |-coursePage----------------|-Topicviewer------|Notes.css
+        |                           |-Rightbar---------|Rightbar.css
+        |-about-----------------    |-Sidebar----------|Sidebar.css
+        |-contact              |    |-coursePage.css
+        |-Disclaimer           |____
+        |-privacyPolicy        |    Legalpage.css
+        |-termCondition -------|
+        |
+        |-App.css
