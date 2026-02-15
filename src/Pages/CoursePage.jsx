@@ -1,64 +1,66 @@
-import React from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import React from "react";
+import { useParams, Navigate } from "react-router-dom";
 
 // Components
-import TopicViewer from '../Components/TopicViewer'; 
-import Sidebar from '../Components/Sidebar';
-import Rightbar from '../Components/Rightbar'; 
+import TopicViewer from "../Components/TopicViewer";
+import Sidebar from "../Components/Sidebar";
+import Rightbar from "../Components/Rightbar";
 
 // Data
-import { javaData } from '../data/javaData'; 
-import { pythonData } from '../data/pythonData'; 
-import { htmlData } from '../data/htmlData';
-import { javascriptData } from '../data/javascriptData';
-import { cssData } from '../data/cssData';
+import { javaData } from "../data/javaData";
+import { pythonData } from "../data/pythonData";
+import { htmlData } from "../data/htmlData";
+import { javascriptData } from "../data/javascriptData";
+import { cssData } from "../data/cssData";
 
-
-
-import '../Styles/CoursePage.css'; 
+import "../Styles/CoursePage.css";
 
 const dataMap = {
   java: javaData,
-  python: pythonData, 
+  python: pythonData,
   html: htmlData,
   javascript: javascriptData,
-  css :cssData,
+  css: cssData,
 };
 
-const CoursePage = () => {
+const CoursePage = ({ isSidebarOpen, setSidebarOpen }) => {
   const { subject, topic } = useParams();
-  
-  // 1. Subject Validation
+
   const currentSubjectData = dataMap[subject];
   if (!currentSubjectData) {
     return <div className="error-msg">Subject Not Found (404)</div>;
   }
 
-  // 2. Auto-Redirect Logic (Agar topic URL me nahi hai)
   if (!topic) {
     const firstTopicId = currentSubjectData.topics[0].id;
     return <Navigate to={`/course/${subject}/${firstTopicId}`} replace />;
   }
 
-  // 3. Topic Data Fetching
-  const currentTopicData = currentSubjectData.topics.find(t => t.id === topic);
+  const currentTopicData = currentSubjectData.topics.find(
+    (t) => t.id === topic,
+  );
   if (!currentTopicData) {
     return <div className="error-msg">Topic Not Found inside {subject}</div>;
   }
 
   return (
     <div className="course-page-container">
-      
       {/* --- LEFT COLUMN: SIDEBAR --- */}
+      {isSidebarOpen && (
+        <div className="overlay" onClick={() => setSidebarOpen(false)} />
+      )}
+
       <aside className="layout-sidebar">
-        <Sidebar 
-          subjectData={currentSubjectData} 
-          activeTopicId={topic} 
+        <Sidebar
+          isOpen={isSidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+          subjectData={currentSubjectData}
+          activeTopicId={topic}
         />
       </aside>
 
       {/* --- MIDDLE COLUMN: MAIN CONTENT --- */}
-      <main className="layout-content">
+      <main className="layout-content" onClick={() => setSidebarOpen(false)}>
         <TopicViewer topicData={currentTopicData} />
       </main>
 
@@ -66,7 +68,6 @@ const CoursePage = () => {
       <aside className="layout-rightbar">
         <Rightbar />
       </aside>
-
     </div>
   );
 };
