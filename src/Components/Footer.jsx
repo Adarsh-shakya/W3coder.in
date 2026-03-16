@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section logo">
           <h2>
-            W3<span className="highlight">coder</span>
+            W3<span style={{ color: "#f39c12" }}>coder</span>
           </h2>
           <p>"Learn. Reflect. Rise."</p>
           <p>&copy; 2025 w3coder</p>
@@ -54,7 +54,7 @@ const Footer = () => {
           </p>
           <div className="socials">
             <a
-              href="https://www.linkedin.com/in/yourname"
+              href="https://www.linkedin.com/company/w3coderin/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -76,14 +76,14 @@ const Footer = () => {
             </a>
             {/* <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"><FaTwitter /></a> */}
             <a
-              href="https://www.instagram.com/yourid"
+              href="https://www.instagram.com/w3coder.in?igsh=NTgxazE0aW1sdG5y"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram />
             </a>
             <a
-              href="https://facebook.com/yourprofile"
+              href="https://www.facebook.com/share/17u2Ru71o3/"
               target="_blank"
               rel="noopener noreferrer"
             >

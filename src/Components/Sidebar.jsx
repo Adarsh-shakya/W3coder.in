@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../Styles/Sidebar.css";
 
 const Sidebar = ({ subjectData, activeTopicId, isOpen, onClose }) => {
-  console.log("Sidebar ko status mila:", isOpen);
+ 
   if (!subjectData) {
     return <div className="sidebar">Select a subject</div>;
   }
