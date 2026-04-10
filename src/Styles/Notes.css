@@ -1,45 +1,188 @@
-   .note-container {
-    padding: 1rem;
-    font-family: 'Segoe UI', sans-serif;
-    
-    
-  }
+/* =========================================
+   INTERACTIVE PLAYGROUND CSS
+========================================= */
+
+.playground-container {
+  margin-top: 3rem;
+  background-color: #0f172a;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);
+  border: 1px solid #334155;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.playground-header {
+  background-color: #1e293b;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #334155;
+}
+
+.playground-header h3 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.playground-header p {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.playground-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #0f172a;
+  border-bottom: 1px solid #1e293b;
+}
+
+.playground-tab {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.playground-tab:hover {
+  color: #ffffff;
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
+.playground-tab.active {
+  color: #ffffff;
+  border-bottom-color: #3b82f6;
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
+.playground-code-area {
+  padding: 1.5rem;
+  position: relative;
+  background-color: #0f172a;
+}
+
+.playground-run-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background-color: #059669;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease;
+}
+
+.playground-run-btn:hover {
+  background-color: #047857;
+}
+
+.playground-run-btn:disabled {
+  background-color: #334155;
+  cursor: not-allowed;
+}
+
+.playground-run-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.playground-output {
+  background-color: #000000;
+  padding: 1.5rem;
+  border-top: 1px solid #1e293b;
+  min-height: 100px;
+}
+
+.playground-output-header {
+  display: flex;
+  align-items: center;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  gap: 0.5rem;
+}
+
+.playground-output-header svg {
+  width: 14px;
+  height: 14px;
+}
+
+.playground-output-text {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  white-space: pre-wrap;
+  display: flex;
+  align-items: center;
+}
+
+.playground-output-text.has-run {
+  color: #e2e8f0;
+}
+
+.blinking-cursor {
+  color: #10b981;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* =========================================
+   NOTE CONTAINER & TYPOGRAPHY
+========================================= */
+.note-container {
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
   
-  .note-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2C3E50;
-    margin-bottom: 1rem;
-  }
+.note-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 1rem;
+}
   
-  .note-heading {
-    font-size: 1.5rem;
-    color: #1e3a8a;
-    margin: 2rem 0 1rem;
-  }
+.note-heading {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin: 2rem 0 1rem;
+}
   
-  .note-subheading {
-    font-size: 1.2rem;
-    color: #3b82f6;
-    margin: 1rem 0 0.5rem;
-  }
+.note-subheading {
+  font-size: 1.2rem;
+  color: #3b82f6;
+  margin: 1rem 0 0.5rem;
+}
   
-  .note-text {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-  }
-  
-  /* .note-code {
-    background-color: #ECEFF4;
-    padding: 1rem;
-    border-left: 4px solid #3b82f6;
-    font-family: monospace;
-    white-space: pre-wrap;
-    overflow-x: auto;
-    margin-bottom: 1rem;
-  }
-   */
-   .highlight {
+.note-text {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.highlight {
   background-color: #fff3cd;
   color: #000;
   padding: 2px 6px;
@@ -54,20 +197,63 @@
   border-radius: 4px;
   font-family: monospace;
 }
-  .note-example-title {
-    font-weight: bold;
-    margin-top: 0.5rem;
-  }
+
+.note-example-title {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
   
-  .note-section {
-    margin-top: 2rem;
-  }
+.note-section {
+  margin-top: 2rem;
+}
   
-  .content-block {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
+.content-block {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   SIMPLE GRID TABLE CSS 
+========================================= */
+.note-table-container {
+  overflow-x: auto;
+  margin: 1.5rem 0 2.5rem 0;
+}
+
+.note-table {
+  width: 100%;
+  border-collapse: collapse; 
+  text-align: left;
+  background-color: #ffffff;
+}
+
+.note-table th, 
+.note-table td {
+  border: 1px solid #94a3b8; 
+  padding: 12px 16px;
+  color: #000000; 
+  font-size: 0.95rem;
+}
+
+.note-table th {
+  background-color: #f1f5f9; 
+  font-weight: bold;
+}
+
+.note-table tr:nth-child(even) {
+  background-color: #fafafa; 
+}
+
+/* =========================================
+   IMAGE RESPONSIVENESS
+========================================= */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto; 
+  border-radius: 8px; 
+}

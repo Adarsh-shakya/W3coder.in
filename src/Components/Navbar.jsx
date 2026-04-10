@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/images/logo.webp";
 import "../Styles/Navbar.css";
 
 const Navbar = ({ onToggleMenu }) => {
@@ -21,11 +22,8 @@ const Navbar = ({ onToggleMenu }) => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-            <h1>
-              {" "}
-              <span style={{ color: "#f39c12", fontStyle: "italic" }}>W3</span>
-              coder
-            </h1>
+          <img src={logo} alt="w3coder.in"  className="logo"/>
+           
           </Link>
         </div>
 

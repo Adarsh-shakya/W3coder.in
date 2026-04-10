@@ -31,11 +31,7 @@ export const javaData = {
             { type: "text", value: "Example:", className: "note-example-title" },
             {
               type: "code",
-              value: `public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Hello, World!");
-  }
-}`
+              value: `public class HelloWorld {\n  public static void main(String[] args) {\n    System.out.println("Hello, World!");\n  }\n}`
             }
           ]
         },
@@ -58,7 +54,7 @@ export const javaData = {
           content: [
             { type: "text", value: "Java has two categories of data types:" },
             {
-              type: "list-html", // Isme HTML tags (<strong>) use honge
+              type: "list-html",
               items: [
                 "<strong>Primitive Types:</strong> int, float, double, char, boolean, byte, short, long",
                 "<strong>Non-Primitive Types:</strong> Strings, Arrays, Classes, Interfaces"
@@ -71,9 +67,7 @@ export const javaData = {
           content: [
             {
               type: "code",
-              value: `int age = 25;
-String name = "John";
-boolean isJavaFun = true;`
+              value: `int age = 25;\nString name = "John";\nboolean isJavaFun = true;`
             }
           ]
         },
@@ -93,6 +87,21 @@ boolean isJavaFun = true;`
           ]
         }
       ],
+      // ==========================================
+      // JAVA BASICS PLAYGROUND EXAMPLES
+      // ==========================================
+      playground: [
+        {
+          title: "Hello World",
+          code: `public class Main {\n  public static void main(String[] args) {\n    System.out.println("Hello, World!");\n  }\n}`,
+          output: "Hello, World!"
+        },
+        {
+          title: "Variables",
+          code: `public class Main {\n  public static void main(String[] args) {\n    int age = 25;\n    String name = "John";\n    System.out.println(name + " is " + age + " years old.");\n  }\n}`,
+          output: "John is 25 years old."
+        }
+      ],
       conclusion: "Understanding Java basics is the first step to becoming a proficient Java developer. These fundamentals provide the foundation for all advanced concepts and real-world applications."
     },
 
@@ -105,52 +114,28 @@ boolean isJavaFun = true;`
         {
           heading: "1. Decision-Making Statements",
           content: [
-            // Block 1.1
             {
-              type: "block", // Special type for 'content-block' styling
+              type: "block",
               subheading: "1.1 if Statement",
               text: "Executes code block if the condition is true.",
-              code: `if(condition) {
-  // code block
-}`,
+              code: `if(condition) {\n  // code block\n}`,
               exampleTitle: "Example:",
-              exampleCode: `int age = 18;
-if(age >= 18) {
-  System.out.println("You are eligible to vote.");
-}`
+              exampleCode: `int age = 18;\nif(age >= 18) {\n  System.out.println("You are eligible to vote.");\n}`
             },
-            // Block 1.2
             {
               type: "block",
               subheading: "1.2 if-else Statement",
-              code: `if(condition) {
-  // true block
-} else {
-  // false block
-}`
+              code: `if(condition) {\n  // true block\n} else {\n  // false block\n}`
             },
-            // Block 1.3
             {
               type: "block",
               subheading: "1.3 if-else-if Ladder",
-              code: `if(condition1) {
-  // block1
-} else if(condition2) {
-  // block2
-} else {
-  // default block
-}`
+              code: `if(condition1) {\n  // block1\n} else if(condition2) {\n  // block2\n} else {\n  // default block\n}`
             },
-            // Block 1.4
             {
               type: "block",
               subheading: "1.4 switch Statement",
-              code: `int day = 3;
-switch(day) {
-  case 1: System.out.println("Monday"); break;
-  case 2: System.out.println("Tuesday"); break;
-  default: System.out.println("Invalid day");
-}`
+              code: `int day = 3;\nswitch(day) {\n  case 1: System.out.println("Monday"); break;\n  case 2: System.out.println("Tuesday"); break;\n  default: System.out.println("Invalid day");\n}`
             }
           ]
         },
@@ -160,27 +145,17 @@ switch(day) {
             {
               type: "block",
               subheading: "2.1 for Loop",
-              code: `for(int i = 1; i <= 5; i++) {
-  System.out.println(i);
-}`
+              code: `for(int i = 1; i <= 5; i++) {\n  System.out.println(i);\n}`
             },
             {
               type: "block",
               subheading: "2.2 while Loop",
-              code: `int i = 1;
-while(i <= 5) {
-  System.out.println(i);
-  i++;
-}`
+              code: `int i = 1;\nwhile(i <= 5) {\n  System.out.println(i);\n  i++;\n}`
             },
             {
               type: "block",
               subheading: "2.3 do-while Loop",
-              code: `int i = 1;
-do {
-  System.out.println(i);
-  i++;
-} while(i <= 5);`
+              code: `int i = 1;\ndo {\n  System.out.println(i);\n  i++;\n} while(i <= 5);`
             }
           ]
         },
@@ -190,27 +165,34 @@ do {
             {
               type: "block",
               subheading: "3.1 break Statement",
-              code: `for(int i = 1; i <= 5; i++) {
-  if(i == 3) break;
-  System.out.println(i);
-}`
+              code: `for(int i = 1; i <= 5; i++) {\n  if(i == 3) break;\n  System.out.println(i);\n}`
             },
             {
               type: "block",
               subheading: "3.2 continue Statement",
-              code: `for(int i = 1; i <= 5; i++) {
-  if(i == 3) continue;
-  System.out.println(i);
-}`
+              code: `for(int i = 1; i <= 5; i++) {\n  if(i == 3) continue;\n  System.out.println(i);\n}`
             },
             {
               type: "block",
               subheading: "3.3 return Statement",
-              code: `public static int sum(int a, int b) {
-  return a + b;
-}`
+              code: `public static int sum(int a, int b) {\n  return a + b;\n}`
             }
           ]
+        }
+      ],
+      // ==========================================
+      // FLOW CONTROL PLAYGROUND EXAMPLES
+      // ==========================================
+      playground: [
+        {
+          title: "If-Else",
+          code: `public class Main {\n  public static void main(String[] args) {\n    int age = 18;\n    if(age >= 18) {\n      System.out.println("Eligible to vote.");\n    } else {\n      System.out.println("Not eligible.");\n    }\n  }\n}`,
+          output: "Eligible to vote."
+        },
+        {
+          title: "For Loop",
+          code: `public class Main {\n  public static void main(String[] args) {\n    for(int i = 1; i <= 3; i++) {\n      System.out.println("Count: " + i);\n    }\n  }\n}`,
+          output: "Count: 1\nCount: 2\nCount: 3"
         }
       ],
       conclusion: "Flow control statements are crucial for making Java programs dynamic and flexible. Understanding them is fundamental for writing efficient code."

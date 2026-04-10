@@ -2,12 +2,12 @@
 .navbar {
   background-color: white;
   padding: 1rem 2rem;
-  border-radius: 30px;
-  box-shadow: 3px 4px 6px -1px rgba(0, 0, 0, 0.4);
+  /* border-radius: 30px; */
+  /* box-shadow: 3px 4px 6px -1px rgba(0, 0, 0, 0.4); */
   position: sticky;
-  border: 1px solid rgb(224, 222, 222);
+  border-bottom: 1px solid rgb(224, 222, 222);
   height: auto;
-  margin: 8px;
+  /* margin: 8px; */
   top: 0;
   left: 0;
   z-index: 1100;
@@ -17,6 +17,36 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+}
+
+
+.logo {
+  height: 45px; 
+  width: auto; 
+  max-width: 100%; 
+  object-fit: contain; 
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+
+.logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+@media (max-width: 768px) {
+  .logo {
+    height: 38px; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .logo {
+    height: 32px; 
+  }
 }
 
 .navbar-logo h1 a {
@@ -60,7 +90,7 @@
   text-decoration: none;
 }
 
-/* Hide the navbar menu by default on mobile screens */
+
  @media (max-width: 768px) {
   .navbar {
     padding: 0%;
@@ -72,7 +102,7 @@
     align-items: flex-start;
   } 
 
-  /* Hide the menu by default  */
+  
    .navbar-menu {
     overflow-x: auto;
     gap: 1.2rem;
