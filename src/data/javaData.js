@@ -32,7 +32,7 @@ import java_Img from "../assets/images/java_img.webp";
 
 import DataType from "../assets/images/DataType.webp";
 import controlFlow_img from "../assets/images/controFlow_img.webp";
-import Input_img from "../assets/images/Input_img.webp";
+import Input_img from "../assets/images/Input_Img.webp";
 
 export const javaData = {
   subjectTitle: "Java programming",
