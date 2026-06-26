@@ -1,9 +1,9 @@
-// python Introduction - remain
-// python Comments -  remain
+// python Introduction - 
+// python Comments -  
 // python Variables
 // python Input Function  
 // python Data Types
-// python Type Casting - remain
+// python Type Casting - 
 // python Operators
 // python Conditional Statements
 // python Loops
@@ -13,14 +13,14 @@
 // python Sets
 // python Dictionaries
 // python Functions
-// python Modules---------------------
-// python Packages                   1
-// python File Handling              1
-// python Exception Handling         1
-// python Lambda Functions           1
-// python List Comprehension         1
-// python Dictionary Comprehension   1
-// python OOP------------------------
+// python Modules
+// python Packages                   
+// python File Handling              
+// python Exception Handling         
+// python Lambda Functions           
+// python List Comprehension         
+// python Dictionary Comprehension   
+// python OOP
 import python_img from "../assets/images/python.webp";
 
 export const pythonData = {
