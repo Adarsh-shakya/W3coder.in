@@ -28,7 +28,7 @@
 // java Threads
 // java Lambda Expressions
 
-import java_Img from "../assets/images/java_Img.webp";
+import java_Img from "../assets/images/java_img.webp";
 
 import DataType from "../assets/images/DataType.webp";
 import controlFlow_img from "../assets/images/controFlow_img.webp";
