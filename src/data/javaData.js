@@ -5,18 +5,18 @@
 // java Data Types -done
 // java Type Casting -done
 // java Operators -done
-// java Conditional Statements
-// java Loops
-// java Strings
-// java Arrays
-// java Methods
+// java Conditional Statements-done 
+// java Loops-done 
+// java Strings-done
+// java Arrays-done  
+// java Methods-done
 // java Classes and Objects
 // java Constructors
-// java Modifiers
-// java Encapsulation
-// java Inheritance
-// java Polymorphism
-// java Abstraction
+// java Modifiers-done
+// java Encapsulation-done
+// java Inheritance-done
+// java Polymorphism-done
+// java Abstraction-done
 // java Interfaces
 // java Enums
 // java Packages
@@ -484,7 +484,7 @@ export const javaData = {
     }
   ],
   conclusion: "Flow control statements are crucial for making Java programs dynamic and flexible. Understanding decision-making, loops, and jump statements is fundamental for writing logical and efficient code."
-    },
+     },
     // ================= TOPIC 2: JAVA comment ==================
     {
       id: "java-comments",
@@ -1276,7 +1276,7 @@ public class Main {
     }
   ],
   conclusion: "The Scanner class is the cornerstone of user interaction in Core Java. By mastering its diverse methods—from reading simple integers to parsing full sentences and arrays—you can easily handle any type of user input and build highly interactive console applications."
-},
+    },
     // ================= TOPIC 2: JAVA type casting =================
     {
   id: "java-type-casting",
@@ -1369,7 +1369,7 @@ public class Main {
     }
   ],
   conclusion: "Type casting is highly useful when performing calculations. Remember: Widening casting is safe and automatic, but Narrowing casting requires manual intervention because you risk losing precision or data."
-},
+    },
      // ================= TOPIC 2: JAVA Opraters =================
      {
   id: "java-operators",
@@ -1760,11 +1760,11 @@ public class Main {
     }
   ],
   conclusion: "Arrays are powerful, lightning-fast, and deeply integrated into Java's core architecture. However, they have one major limitation: their size is fixed. Once you declare an array of size 10, you cannot suddenly add an 11th item. In real-world applications where data grows dynamically, Java developers usually prefer the 'ArrayList' class, which we will explore in later chapters."
-},
+     },
      // ================= TOPIC 2: JAVA loop =================
-{
+    {
   id: "java-loops",
-  title: "Java Loops (Control Flow)",
+  title: "Java Loops",
   subjectCode: "java",
   intro: "Computers are incredibly fast, but their true power shines when performing repetitive tasks without getting tired. In programming, if you need to execute the same block of code multiple times, you use Loops. Loops help you follow the DRY (Don't Repeat Yourself) principle, keeping your code clean, efficient, and easy to maintain. In Java, there are several types of loops, each designed for specific real-world scenarios.",
   sections: [
@@ -1999,6 +1999,788 @@ public class Main {
     }
   ],
   conclusion: "Loops are the engine that drives repetitive logic in your software. Whether you are searching through an array of data, processing thousands of user inputs, or building complex game physics, choosing the right loop makes your code both efficient and easily readable. As a rule of thumb: use a 'for' loop when you know the exact iterations, use a 'while' loop for unknown iterations, and use a 'for-each' loop whenever you are reading arrays."
-}
+    },
+    // ================= TOPIC: JAVA Strings ==================
+    {
+      id: "java-strings",
+      title: "Java Strings",
+      intro: "In Java, strings are objects that represent a sequence of characters. The java.lang.String class is used to create and manipulate strings, and unlike some other languages, Java strings are immutable.",
+      sections: [
+        {
+          heading: "1. Creating Strings",
+          content: [
+            {
+              type: "text",
+              value: "Strings in Java can be created using string literals (stored in the String Pool) or the 'new' keyword (stored in heap memory)."
+            },
+            {
+              type: "code",
+              value: `String name = "Adarsh"; // String literal\nString message = new String("Hello World"); // Using 'new' keyword`,
+            },
+          ],
+        },
+        {
+          heading: "2. String Concatenation",
+          content: [
+            {
+              type: "text",
+              value: "You can concatenate (join) strings using the + operator or the concat() method.",
+            },
+            {
+              type: "code",
+              value: `String str1 = "Java";\nString str2 = "Programming";\n\nSystem.out.println(str1 + " " + str2);      // Java Programming\nSystem.out.println(str1.concat(" 17"));     // Java 17`,
+            },
+          ],
+        },
+        {
+          heading: "3. Java String Methods",
+          content: [
+            {
+              type: "table",
+              headers: ["Method", "Description", "Code Example", "Output"],
+              rows: [
+                ["length()", "Returns the length of the string", 'String s="hello"; System.out.println(s.length());', "5"],
+                ["charAt()", "Returns character at a specific index", 'String s="hello"; System.out.println(s.charAt(1));', "e"],
+                ["toUpperCase()", "Converts to uppercase", 'String s="hello"; System.out.println(s.toUpperCase());', "HELLO"],
+                ["toLowerCase()", "Converts to lowercase", 'String s="HELLO"; System.out.println(s.toLowerCase());', "hello"],
+                ["trim()", "Removes spaces from both ends", 'String s=" hello "; System.out.println(s.trim());', "hello"],
+                ["substring()", "Extracts a portion of the string", 'String s="hello"; System.out.println(s.substring(1,4));', "ell"],
+                ["replace()", "Replaces characters or substrings", 'String s="hello"; System.out.println(s.replace("h","y"));', "yello"],
+                ["split()", "Splits string into an array based on regex", 'String s="a,b"; String[] arr = s.split(",");', '["a", "b"]'],
+                ["indexOf()", "Returns index of first occurrence", 'String s="hello"; System.out.println(s.indexOf("e"));', "1"],
+                ["contains()", "Checks if string contains a sequence", 'String s="hello"; System.out.println(s.contains("ell"));', "true"],
+                ["equals()", "Compares content of two strings", 'String s="hello"; System.out.println(s.equals("Hello"));', "false"],
+                ["equalsIgnoreCase()", "Compares content, ignoring case", 'String s="hello"; System.out.println(s.equalsIgnoreCase("Hello"));', "true"],
+                ["startsWith()", "Checks if string starts with prefix", 'String s="hello"; System.out.println(s.startsWith("he"));', "true"],
+                ["endsWith()", "Checks if string ends with suffix", 'String s="hello"; System.out.println(s.endsWith("lo"));', "true"],
+                ["isEmpty()", "Checks if string length is 0", 'String s=""; System.out.println(s.isEmpty());', "true"]
+              ]
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND ADDED HERE (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Case & Trim Methods",
+          code: `String text = "  jAvA pRoGrAmMiNg  ";\n\nSystem.out.println("Upper: " + text.toUpperCase());\nSystem.out.println("Lower: " + text.toLowerCase());\nSystem.out.println("Trimmed: '" + text.trim() + "'");\nSystem.out.println("Length: " + text.length());`,
+          output: "Upper:   JAVA PROGRAMMING  \nLower:   java programming  \nTrimmed: 'jAvA pRoGrAmMiNg'\nLength: 20"
+        },
+        {
+          title: "Search & Compare",
+          code: `String msg1 = "Java is fun";\nString msg2 = "JAVA IS FUN";\n\nSystem.out.println("Index of 'is': " + msg1.indexOf("is"));\nSystem.out.println("Contains 'fun': " + msg1.contains("fun"));\nSystem.out.println("Equals: " + msg1.equals(msg2));\nSystem.out.println("Equals Ignore Case: " + msg1.equalsIgnoreCase(msg2));\nSystem.out.println("Starts with 'Java': " + msg1.startsWith("Java"));`,
+          output: "Index of 'is': 5\nContains 'fun': true\nEquals: false\nEquals Ignore Case: true\nStarts with 'Java': true"
+        },
+        {
+          title: "Substring & Replace",
+          code: `String str = "Hello Universe!";\n\nSystem.out.println("Substring (6): " + str.substring(6));\nSystem.out.println("Substring (0,5): " + str.substring(0, 5));\nSystem.out.println("Replace 'Universe': " + str.replace("Universe", "Java"));\nSystem.out.println("Replace char 'e': " + str.replace('e', 'x'));`,
+          output: "Substring (6): Universe!\nSubstring (0,5): Hello\nReplace 'Universe': Hello Java!\nReplace char 'e': Hxllo Univxrsx!"
+        },
+        {
+          title: "Split & Validate",
+          code: `String data = "HTML,CSS,Java,SQL";\nString emptyStr = "";\n\n// 1. Split converts it to an array\nString[] skills = data.split(",");\nSystem.out.println("First skill: " + skills[0]);\nSystem.out.println("Total skills: " + skills.length);\n\n// 2. Validate empty strings\nSystem.out.println("Is 'data' empty? " + data.isEmpty());\nSystem.out.println("Is 'emptyStr' empty? " + emptyStr.isEmpty());`,
+          output: "First skill: HTML\nTotal skills: 4\nIs 'data' empty? false\nIs 'emptyStr' empty? true"
+        }
+      ],
+      conclusion: "Java Strings are powerful, immutable objects. Because they cannot be changed after creation, methods that appear to modify a string actually return a brand new string. Mastering these built-in methods is vital for efficient text manipulation and data processing in Java."
+    },
+   // ================= TOPIC: JAVA Methods ==================
+    {
+      id: "java-methods",
+      title: "Java Methods",
+      intro: "A method is a block of code that only runs when it is called. Methods are used to perform specific actions and are essential for reusing code—you write the logic once and use it many times. They can accept inputs (parameters) and hand back results (return values).",
+      sections: [
+        {
+          heading: "1. No Return Type, No Parameters",
+          content: [
+            {
+              type: "text",
+              value: "These methods use the 'void' keyword, meaning they do not return any data to the caller. They also have empty parentheses, meaning they don't require any outside input to do their job."
+            },
+            {
+              type: "code",
+              value: `static void printGreeting() {\n    System.out.println("Welcome to Java!");\n}`,
+            },
+          ],
+        },
+        {
+          heading: "2. No Return Type, With Parameters",
+          content: [
+            {
+              type: "text",
+              value: "These methods still use 'void' so they don't return a value, but they accept variables inside their parentheses. This allows them to perform actions based on the specific data passed into them.",
+            },
+            {
+              type: "code",
+              value: `static void printScore(String player, int score) {\n    System.out.println(player + " scored " + score + " points.");\n}`,
+            },
+          ],
+        },
+        {
+          heading: "3. With Return Type, No Parameters",
+          content: [
+            {
+              type: "text",
+              value: "Instead of 'void', these methods declare a specific data type (like int, double, or String). They execute their logic and use the 'return' keyword to hand back a value, but they don't need any inputs."
+            },
+            {
+              type: "code",
+              value: `static double getPiValue() {\n    return 3.14159;\n}`
+            }
+          ]
+        },
+        {
+          heading: "4. With Return Type, With Parameters",
+          content: [
+            {
+              type: "text",
+              value: "These are highly flexible methods. They accept input variables, process that data, and return a computed result back to wherever the method was called."
+            },
+            {
+              type: "code",
+              value: `static int calculateArea(int length, int width) {\n    return length * width;\n}`
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND ADDED HERE (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Void Methods",
+          code: `// No params\nstatic void sayHello() {\n    System.out.println("Hello World!");\n}\n\n// With params\nstatic void greetUser(String name, int age) {\n    System.out.println(name + " is " + age + " years old.");\n}\n\npublic static void main(String[] args) {\n    sayHello();\n    greetUser("Alice", 25);\n}`,
+          output: "Hello World!\nAlice is 25 years old."
+        },
+        {
+          title: "Return Methods",
+          code: `// Returns double, no params\nstatic double getGravity() {\n    return 9.81;\n}\n\n// Returns int, with params\nstatic int multiply(int a, int b) {\n    return a * b;\n}\n\npublic static void main(String[] args) {\n    System.out.println("Gravity is: " + getGravity());\n    \n    int result = multiply(5, 4);\n    System.out.println("5 x 4 = " + result);\n}`,
+          output: "Gravity is: 9.81\n5 x 4 = 20"
+        },
+        {
+          title: "Method Overloading",
+          code: `// Same method name, different parameters\nstatic int add(int a, int b) {\n    return a + b;\n}\n\nstatic double add(double a, double b) {\n    return a + b;\n}\n\nstatic int add(int a, int b, int c) {\n    return a + b + c;\n}\n\npublic static void main(String[] args) {\n    System.out.println("Two Ints: " + add(5, 10));\n    System.out.println("Two Doubles: " + add(4.5, 3.2));\n    System.out.println("Three Ints: " + add(1, 2, 3));\n}`,
+          output: "Two Ints: 15\nTwo Doubles: 7.7\nThree Ints: 6"
+        },
+        {
+          title: "Static vs Instance",
+          code: `// Static method (belongs to the class)\nstatic void staticMethod() {\n    System.out.println("Called without an object.");\n}\n\n// Public/Instance method (belongs to an object)\npublic void instanceMethod() {\n    System.out.println("Called using an object.");\n}\n\npublic static void main(String[] args) {\n    staticMethod(); // Direct call\n    \n    // instanceMethod(); -> ERROR!\n    \n    Main myObj = new Main(); // Create object\n    myObj.instanceMethod();  // Call via object\n}`,
+          output: "Called without an object.\nCalled using an object."
+        }
+      ],
+      conclusion: "Methods keep your code organized, readable, and DRY (Don't Repeat Yourself). Understanding how to mix and match return types and parameters allows you to build powerful, reusable blocks of logic."
+    },
+    // ================= TOPIC: JAVA Classes and Objects =====
+    {
+      id: "java-classes-and-objects",
+      title: "Java Classes and Objects",
+      intro: "Java is an Object-Oriented Programming (OOP) language. A Class is a logical blueprint or template that defines the attributes (fields/state) and behaviors (methods) of a concept. An Object is a physical, real-world instance of that class created in memory using the 'new' keyword.",
+      sections: [
+        {
+          heading: "1. What is a Class?",
+          content: [
+            {
+              type: "text",
+              value: "A class does not occupy memory when defined; it simply specifies what properties and capabilities objects of its type will have."
+            },
+            {
+              type: "code",
+              value: `public class Car {\n    // Attributes (State / Fields)\n    String brand;\n    String color;\n    int speed;\n\n    // Behavior (Methods)\n    void accelerate() {\n        speed += 10;\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "2. What is an Object?",
+          content: [
+            {
+              type: "text",
+              value: "An object is an instance of a class allocated in Heap memory. You can create multiple distinct objects from a single class blueprint, each maintaining its own independent state."
+            },
+            {
+              type: "code",
+              value: `Car myCar = new Car(); // 'new' allocates memory for the object\nmyCar.brand = "Tesla";\nmyCar.color = "Red";\nmyCar.accelerate();`
+            }
+          ]
+        },
+        {
+          heading: "3. Class vs Object Comparison",
+          content: [
+            {
+              type: "table",
+              headers: ["Feature", "Class", "Object"],
+              rows: [
+                ["Definition", "A conceptual blueprint or template", "A physical instance of a class"],
+                ["Memory Allocation", "No memory is allocated when declared", "Memory is allocated in Heap when instantiated with 'new'"],
+                ["Existence", "Logical entity", "Physical / Real-world entity"],
+                ["Quantity", "Declared only once", "Can create unlimited objects from one class"],
+                ["Example", "Architect's blueprint of a house", "The actual physical houses built from that blueprint"]
+              ]
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Simple Class & Object",
+          code: `class Student {\n    String name;\n    int rollNumber;\n\n    void study() {\n        System.out.println(name + " is studying Java.");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Student s1 = new Student(); // Create Object\n        s1.name = "Adarsh";\n        s1.rollNumber = 101;\n\n        System.out.println("Name: " + s1.name);\n        s1.study();\n    }\n}`,
+          output: "Name: Adarsh\nAdarsh is studying Java."
+        },
+        {
+          title: "Multiple Independent Objects",
+          code: `class Dog {\n    String name;\n    int age;\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog dog1 = new Dog();\n        dog1.name = "Buddy";\n        dog1.age = 3;\n\n        Dog dog2 = new Dog();\n        dog2.name = "Max";\n        dog2.age = 5;\n\n        System.out.println(dog1.name + " is " + dog1.age + " yrs old.");\n        System.out.println(dog2.name + " is " + dog2.age + " yrs old.");\n    }\n}`,
+          output: "Buddy is 3 yrs old.\nMax is 5 yrs old."
+        },
+        {
+          title: "Constructors (Initializing State)",
+          code: `class Laptop {\n    String brand;\n    int ramGB;\n\n    // Parameterized Constructor\n    Laptop(String b, int r) {\n        brand = b;\n        ramGB = r;\n    }\n\n    void displaySpecs() {\n        System.out.println(brand + " has " + ramGB + "GB RAM.");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Laptop lap1 = new Laptop("Apple MacBook", 16);\n        Laptop lap2 = new Laptop("Dell XPS", 32);\n\n        lap1.displaySpecs();\n        lap2.displaySpecs();\n    }\n}`,
+          output: "Apple MacBook has 16GB RAM.\nDell XPS has 32GB RAM."
+        },
+        {
+          title: "State Modification via Methods",
+          code: `class BankAccount {\n    String accountHolder;\n    double balance;\n\n    BankAccount(String holder, double initialBalance) {\n        accountHolder = holder;\n        balance = initialBalance;\n    }\n\n    void deposit(double amount) {\n        balance += amount;\n        System.out.println(accountHolder + " deposited: $" + amount);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        BankAccount acc = new BankAccount("Adarsh", 1000.0);\n        System.out.println("Initial Balance: $" + acc.balance);\n        \n        acc.deposit(500.0);\n        System.out.println("Updated Balance: $" + acc.balance);\n    }\n}`,
+          output: "Initial Balance: $1000.0\nAdarsh deposited: $500.0\nUpdated Balance: $1500.0"
+        }
+      ],
+      conclusion: "Classes and Objects form the core of Java programming. By separating the blueprint (Class) from the actual instances (Objects), you can structure complex software where individual objects maintain their own state and interact safely through clearly defined methods."
+    },
+    // ================= TOPIC: JAVA Constructors ============
+    {
+      id: "java-constructors",
+      title: "Java Constructors",
+      intro: "A constructor in Java is a special block of code used to initialize objects. It is called automatically when an instance of a class is created using the 'new' keyword. Its main purpose is to allocate memory and set initial values for object attributes.",
+      sections: [
+        {
+          heading: "1. Rules for Defining a Constructor",
+          content: [
+            {
+              type: "text",
+              value: "To create a valid constructor in Java, you must strictly follow these foundational rules:"
+            },
+            {
+              type: "table",
+              headers: ["Rule", "Description"],
+              rows: [
+                ["Same Name", "The constructor's name MUST exactly match the Class name."],
+                ["No Return Type", "Constructors must NOT have an explicit return type (not even 'void')."],
+                ["Allowed Modifiers", "Can use access modifiers (public, private, protected) to control instantiation access."],
+                ["Restricted Keywords", "Constructors CANNOT be marked static, final, abstract, or synchronized."]
+              ]
+            }
+          ]
+        },
+        {
+          heading: "2. Default & No-Arg Constructor",
+          content: [
+            {
+              type: "text",
+              value: "If you do not define any constructor in your class, the Java compiler automatically inserts a default, empty no-argument constructor. You can also explicitly write your own no-arg constructor to perform setup tasks."
+            },
+            {
+              type: "code",
+              value: `class Server {\n    String status;\n    \n    // Explicit No-Arg Constructor\n    Server() {\n        status = "Online";\n        System.out.println("Server initialized.");\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "3. Parameterized Constructor",
+          content: [
+            {
+              type: "text",
+              value: "A constructor that accepts parameters allows you to pass initial values dynamically when creating different objects, ensuring each object starts with custom data."
+            },
+            {
+              type: "code",
+              value: `class User {\n    int id;\n    String username;\n    \n    // Parameterized Constructor\n    User(int i, String u) {\n        id = i;\n        username = u;\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "4. Constructor Overloading",
+          content: [
+            {
+              type: "text",
+              value: "A class can have multiple constructors as long as their parameter lists differ in data type, number of parameters, or parameter order. This gives users flexibility in how they instantiate objects."
+            },
+            {
+              type: "code",
+              value: `class Box {\n    Box() { /* Default 1x1x1 cube */ }\n    Box(int side) { /* Custom cube */ }\n    Box(int l, int w, int h) { /* Custom cuboid */ }\n}`
+            }
+          ]
+        },
+        {
+          heading: "5. Copy Constructor",
+          content: [
+            {
+              type: "text",
+              value: "Unlike C++, Java does not provide a default copy constructor. However, you can write a custom constructor that takes an object of the same class as a parameter to clone or duplicate its state."
+            },
+            {
+              type: "code",
+              value: `class Point {\n    int x, y;\n    \n    // Copy Constructor\n    Point(Point p) {\n        this.x = p.x;\n        this.y = p.y;\n    }\n}`
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND ADDED HERE (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Default & No-Arg",
+          code: `class Server {\n    String status;\n\n    // Developer-defined No-Arg Constructor\n    Server() {\n        status = "Online";\n        System.out.println("Server initialized.");\n    }\n\n    void getStatus() {\n        System.out.println("Status: " + status);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Constructor is called here upon 'new'\n        Server s1 = new Server();\n        s1.getStatus();\n    }\n}`,
+          output: "Server initialized.\nStatus: Online"
+        },
+        {
+          title: "Parameterized",
+          code: `class Employee {\n    int empId;\n    String empName;\n\n    // Parameterized Constructor\n    Employee(int id, String name) {\n        empId = id;\n        empName = name;\n    }\n\n    void display() {\n        System.out.println("ID: " + empId + " | Name: " + empName);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Passing values at the time of creation\n        Employee e1 = new Employee(101, "Adarsh");\n        Employee e2 = new Employee(102, "Sarah");\n\n        e1.display();\n        e2.display();\n    }\n}`,
+          output: "ID: 101 | Name: Adarsh\nID: 102 | Name: Sarah"
+        },
+        {
+          title: "Constructor Overloading",
+          code: `class Product {\n    String name;\n    double price;\n\n    // Constructor 1: Only name\n    Product(String n) {\n        name = n;\n        price = 0.0;\n    }\n\n    // Constructor 2: Name and price\n    Product(String n, double p) {\n        name = n;\n        price = p;\n    }\n\n    void show() {\n        System.out.println(name + " costs $" + price);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Product p1 = new Product("Free E-book");\n        Product p2 = new Product("Laptop", 999.99);\n\n        p1.show();\n        p2.show();\n    }\n}`,
+          output: "Free E-book costs $0.0\nLaptop costs $999.99"
+        },
+        {
+          title: "Copy Constructor",
+          code: `class Point {\n    int x, y;\n\n    // Normal Parameterized Constructor\n    Point(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n\n    // Copy Constructor\n    Point(Point p) {\n        this.x = p.x;\n        this.y = p.y;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Point p1 = new Point(10, 20);\n        \n        // Copying state of p1 into new object p2\n        Point p2 = new Point(p1);\n\n        System.out.println("P1 Coordinates: " + p1.x + ", " + p1.y);\n        System.out.println("P2 Coordinates: " + p2.x + ", " + p2.y);\n    }\n}`,
+          output: "P1 Coordinates: 10, 20\nP2 Coordinates: 10, 20"
+        }
+      ],
+      conclusion: "Constructors are the gateway to robust Java object initialization. By mastering default constructors, parameterized inputs, overloading, and object duplication, you ensure that every instance created in memory begins its lifecycle in a valid, well-defined state."
+    }, 
+     // ================= TOPIC: JAVA Access Modifiers =======
+    {
+      id: "java-access-modifiers",
+      title: "Java Access Modifiers",
+      intro: "Access modifiers in Java help restrict the scope of a class, constructor, variable, method, or data member. They provide encapsulation and control where your classes and class members can be accessed from within your application.",
+      sections: [
+        {
+          heading: "1. Access Levels Overview",
+          content: [
+            {
+              type: "text",
+              value: "The following table summarizes the visibility of each modifier across different scopes in a Java application:"
+            },
+            {
+              type: "table",
+              headers: ["Modifier", "Same Class", "Same Package", "Subclass (Different Pkg)", "World (Different Pkg)"],
+              rows: [
+                ["public", "Yes", "Yes", "Yes", "Yes"],
+                ["protected", "Yes", "Yes", "Yes", "No"],
+                ["default (no modifier)", "Yes", "Yes", "No", "No"],
+                ["private", "Yes", "No", "No", "No"]
+              ]
+            }
+          ]
+        },
+        {
+          heading: "2. Private Modifier",
+          content: [
+            {
+              type: "text",
+              value: "The private modifier specifies the most restrictive access level. Members declared as private are accessible only within the exact same class."
+            },
+            {
+              type: "code",
+              value: `class Secret {\n    private int secretCode = 1234;\n    \n    private void reveal() {\n        System.out.println("Code: " + secretCode);\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "3. Default (Package-Private)",
+          content: [
+            {
+              type: "text",
+              value: "When no access modifier is explicitly declared, Java applies the default (package-private) access level. Members are accessible only to classes located within the same package."
+            },
+            {
+              type: "code",
+              value: `class PackageData {\n    String message = "Hello from package!"; // Default modifier\n    \n    void showMessage() {\n        System.out.println(message);\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "4. Protected Modifier",
+          content: [
+            {
+              type: "text",
+              value: "Protected members are accessible within the same package and also to subclasses (child classes) located in different packages through inheritance."
+            },
+            {
+              type: "code",
+              value: `public class GameCharacter {\n    protected int health = 100;\n    \n    protected void takeDamage(int amount) {\n        health -= amount;\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "5. Public Modifier",
+          content: [
+            {
+              type: "text",
+              value: "The public modifier allows complete visibility. Classes, methods, and variables declared as public can be accessed from anywhere in the application."
+            },
+            {
+              type: "code",
+              value: `public class AppConfig {\n    public static final String APP_NAME = "MyJavaApp";\n    \n    public void start() {\n        System.out.println("Starting application...");\n    }\n}`
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND ADDED HERE (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Private & Getters",
+          code: `class BankAccount {\n    private double balance = 5000.0;\n\n    // Public getter to safely access private data\n    public double getBalance() {\n        return balance;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        BankAccount account = new BankAccount();\n        // System.out.println(account.balance); // ERROR: balance has private access\n        System.out.println("Safe Balance Access: $" + account.getBalance());\n    }\n}`,
+          output: "Safe Balance Access: $5000.0"
+        },
+        {
+          title: "Default Access",
+          code: `// Both classes reside in the same package\nclass Employee {\n    String name = "Adarsh"; // Default access\n    int id = 101;           // Default access\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Employee emp = new Employee();\n        System.out.println("Employee Name: " + emp.name);\n        System.out.println("Employee ID: " + emp.id);\n    }\n}`,
+          output: "Employee Name: Adarsh\nEmployee ID: 101"
+        },
+        {
+          title: "Protected & Inheritance",
+          code: `class Vehicle {\n    protected String brand = "Toyota";\n    \n    protected void honk() {\n        System.out.println("Tuut, tuut!");\n    }\n}\n\nclass Car extends Vehicle {\n    private String model = "Corolla";\n    \n    public void displayDetails() {\n        honk(); // Accessing protected method from parent\n        System.out.println("Brand: " + brand + " | Model: " + model);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Car myCar = new Car();\n        myCar.displayDetails();\n    }\n}`,
+          output: "Tuut, tuut!\nBrand: Toyota | Model: Corolla"
+        },
+        {
+          title: "Public Visibility",
+          code: `public class Utility {\n    public static String version = "2.5.0";\n    \n    public static void printAnnouncement() {\n        System.out.println("System updated to version " + version);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Public members can be called freely across classes\n        Utility.printAnnouncement();\n    }\n}`,
+          output: "System updated to version 2.5.0"
+        }
+      ],
+      conclusion: "Proper application of access modifiers is the foundation of encapsulation in object-oriented programming. By keeping variables private and exposing only necessary methods as public, you protect application data from unintended modifications and build maintainable code."
+    },
+    // ================= TOPIC: JAVA Encapsulation ===========
+    {
+      id: "java-encapsulation",
+      title: "Java Encapsulation",
+      intro: "Encapsulation is one of the four fundamental OOP concepts. It is the mechanism of wrapping data (variables) and code acting on that data (methods) together as a single unit, while restricting direct external access to sensitive data (Data Hiding).",
+      sections: [
+        {
+          heading: "1. What is Encapsulation?",
+          content: [
+            {
+              type: "text",
+              value: "To achieve encapsulation in Java: 1) Declare class variables as 'private' so they cannot be accessed directly from outside the class. 2) Provide 'public' getter and setter methods to read and modify the private variables safely."
+            },
+            {
+              type: "code",
+              value: `public class Employee {\n    private double salary; // Hidden data\n\n    // Getter (Read access)\n    public double getSalary() {\n        return salary;\n    }\n\n    // Setter (Write access with validation)\n    public void setSalary(double amount) {\n        if (amount > 0) {\n            this.salary = amount;\n        }\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "2. Real-Life Example: Bank ATM / Medical Capsule",
+          content: [
+            {
+              type: "text",
+              value: "Think of a Bank ATM or Online Banking app: Your account balance is completely hidden (private). You cannot manually change the numbers in the bank's database directly. Instead, you must go through verified public interfaces (deposit/withdraw methods) that validate your PIN and ensure you don't withdraw more money than you actually have."
+            }
+          ]
+        },
+        {
+          heading: "3. Advantages of Encapsulation",
+          content: [
+            {
+              type: "table",
+              headers: ["Advantage", "Description"],
+              rows: [
+                ["Data Hiding", "External classes cannot directly inspect or tamper with internal object states."],
+                ["Input Validation", "Setters allow you to add validation checks before updating internal data (e.g., preventing negative age or salary)."],
+                ["Flexibility & Read-Only", "You can make a variable read-only (by providing only a getter) or write-only (by providing only a setter)."],
+                ["Code Maintainability", "Internal implementation details can be refactored without breaking external code that relies on getters/setters."]
+              ]
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Basic Getters & Setters",
+          code: `class Student {\n    private String name;\n    private int age;\n\n    public String getName() { return name; }\n    public void setName(String name) { this.name = name; }\n\n    public int getAge() { return age; }\n    public void setAge(int age) { this.age = age; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Student s = new Student();\n        s.setName("Adarsh");\n        s.setAge(21);\n        System.out.println(s.getName() + " is " + s.getAge() + " years old.");\n    }\n}`,
+          output: "Adarsh is 21 years old."
+        },
+        {
+          title: "Validation in Setters",
+          code: `class Account {\n    private double balance = 1000.0;\n\n    public void withdraw(double amount) {\n        if (amount <= 0) {\n            System.out.println("Invalid amount!");\n        } else if (amount > balance) {\n            System.out.println("Insufficient funds!");\n        } else {\n            balance -= amount;\n            System.out.println("Withdrew: $" + amount + " | Remaining: $" + balance);\n        }\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Account acc = new Account();\n        acc.withdraw(5000); // Exceeds balance\n        acc.withdraw(400);  // Valid transaction\n    }\n}`,
+          output: "Insufficient funds!\nWithdrew: $400.0 | Remaining: $600.0"
+        },
+        {
+          title: "Read-Only Class",
+          code: `class Configuration {\n    // Private final field initialized via constructor\n    private final String apiKey = "AIzaSyD98_SecretKey_2026";\n\n    // Only getter provided -> Read-Only access\n    public String getApiKey() {\n        return apiKey;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Configuration config = new Configuration();\n        System.out.println("API Key: " + config.getApiKey());\n        // config.apiKey = "newKey"; // ERROR: Cannot assign or access directly\n    }\n}`,
+          output: "API Key: AIzaSyD98_SecretKey_2026"
+        },
+        {
+          title: "Data Hiding Protection",
+          code: `class Vault {\n    private int secretPin = 4321;\n\n    public boolean unlock(int enteredPin) {\n        if (enteredPin == secretPin) {\n            System.out.println("Vault Unlocked!");\n            return true;\n        }\n        System.out.println("Access Denied!");\n        return false;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Vault myVault = new Vault();\n        myVault.unlock(1111); // Wrong PIN\n        myVault.unlock(4321); // Correct PIN\n    }\n}`,
+          output: "Access Denied!\nVault Unlocked!"
+        }
+      ],
+      conclusion: "Encapsulation acts as a protective shield around your data. By combining private fields with public validation methods, you ensure that objects remain secure, consistent, and immune to unauthorized external modifications."
+    },
+    // ================= TOPIC: JAVA Inheritance =============
+    {
+      id: "java-inheritance",
+      title: "Java Inheritance",
+      intro: "Inheritance is an OOP mechanism where one class (child/subclass) acquires the fields and methods of another class (parent/superclass) using the 'extends' keyword. It establishes an 'IS-A' relationship and promotes code reusability.",
+      sections: [
+        {
+          heading: "1. Superclass vs Subclass",
+          content: [
+            {
+              type: "text",
+              value: "The class being inherited from is called the Superclass (or Parent class). The class that inherits is called the Subclass (or Child class). A child class automatically inherits all public and protected attributes of the parent and can also add its own unique features."
+            },
+            {
+              type: "code",
+              value: `// Parent Class\nclass Vehicle {\n    String brand = "Ford";\n    void honk() { System.out.println("Tuut, tuut!"); }\n}\n\n// Child Class inherits from Vehicle\nclass Car extends Vehicle {\n    String model = "Mustang";\n}`
+            }
+          ]
+        },
+        {
+          heading: "2. Real-Life Example: Biological & Vehicle Hierarchy",
+          content: [
+            {
+              type: "text",
+              value: "Consider a Vehicle hierarchy: A 'Smartphone' IS-A 'Device'. A 'Car' IS-A 'Vehicle'. Every Vehicle shares general properties like speed, wheels, and braking capabilities. When manufacturing a specialized 'Electric Car', developers don't need to reinvent general wheel or braking mechanics from scratch; the Electric Car class inherits those standard vehicle features and only defines what makes it unique (like battery charging)."
+            }
+          ]
+        },
+        {
+          heading: "3. Types of Inheritance in Java",
+          content: [
+            {
+              type: "table",
+              headers: ["Type", "Description", "Supported in Java?"],
+              rows: [
+                ["Single Inheritance", "One subclass inherits directly from one superclass (A -> B).", "Yes"],
+                ["Multilevel Inheritance", "A class inherits from a child class, creating a chain (A -> B -> C).", "Yes"],
+                ["Hierarchical Inheritance", "Multiple distinct subclasses inherit from a single superclass (A -> B, A -> C).", "Yes"],
+                ["Multiple Inheritance", "One subclass inheriting directly from two parent classes simultaneously.", "No (Not via classes, to avoid Diamond Problem ambiguity)"]
+              ]
+            }
+          ]
+        },
+        {
+          heading: "4. The 'super' Keyword",
+          content: [
+            {
+              type: "text",
+              value: "The 'super' keyword refers directly to the immediate parent class object. It is commonly used to call the parent class constructor or access parent methods overridden by the child."
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Single Inheritance",
+          code: `class Animal {\n    void eat() { System.out.println("This animal eats food."); }\n}\n\nclass Dog extends Animal {\n    void bark() { System.out.println("The dog barks: Woof!"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Dog myDog = new Dog();\n        myDog.eat();  // Inherited method from Animal\n        myDog.bark(); // Own subclass method\n    }\n}`,
+          output: "This animal eats food.\nThe dog barks: Woof!"
+        },
+        {
+          title: "Method Overriding",
+          code: `class Bank {\n    int getInterestRate() { return 5; }\n}\n\nclass HDFC extends Bank {\n    // Overriding the parent's method with custom logic\n    @Override\n    int getInterestRate() { return 7; }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Bank genericBank = new Bank();\n        HDFC hdfcBank = new HDFC();\n        System.out.println("Base Bank Rate: " + genericBank.getInterestRate() + "%");\n        System.out.println("HDFC Bank Rate: " + hdfcBank.getInterestRate() + "%");\n    }\n}`,
+          output: "Base Bank Rate: 5%\nHDFC Bank Rate: 7%"
+        },
+        {
+          title: "Using 'super' Keyword",
+          code: `class Person {\n    Person() { System.out.println("Person (Parent) Constructor Called"); }\n}\n\nclass Developer extends Person {\n    Developer() {\n        super(); // Explicitly invokes Person constructor\n        System.out.println("Developer (Child) Constructor Called");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Developer dev = new Developer();\n    }\n}`,
+          output: "Person (Parent) Constructor Called\nDeveloper (Child) Constructor Called"
+        },
+        {
+          title: "Multilevel Inheritance",
+          code: `class Device {\n    void powerOn() { System.out.println("Device powered ON"); }\n}\n\nclass Computer extends Device {\n    void bootOS() { System.out.println("Booting Operating System..."); }\n}\n\nclass Laptop extends Computer {\n    void chargeBattery() { System.out.println("Charging internal battery @ 45W"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Laptop macBook = new Laptop();\n        macBook.powerOn();       // From Grandparent (Device)\n        macBook.bootOS();        // From Parent (Computer)\n        macBook.chargeBattery(); // From Self (Laptop)\n    }\n}`,
+          output: "Device powered ON\nBooting Operating System...\nCharging internal battery @ 45W"
+        }
+      ],
+      conclusion: "Inheritance allows developers to build structured hierarchies of classes. By writing core features in superclasses and specializing behavior in child classes, you eliminate code duplication and create extensible, highly organized software architectures."
+    },
+  // ================= TOPIC: JAVA Polymorphism ==============
+    {
+      id: "java-polymorphism",
+      title: "Java Polymorphism",
+      intro: "Polymorphism means 'many forms'. In Java, it allows objects of different classes related by inheritance to respond differently to the exact same method call. It enables one single interface or reference variable to represent multiple underlying implementations.",
+      sections: [
+        {
+          heading: "1. What is Polymorphism?",
+          content: [
+            {
+              type: "text",
+              value: "Polymorphism occurs when a parent class reference is used to refer to a child class object (Upcasting). When an overridden method is called on that reference, Java automatically executes the specific child class version at runtime."
+            },
+            {
+              type: "code",
+              value: `Animal myPet = new Dog(); // Parent reference pointing to Child object\nmyPet.makeSound();        // Executes Dog's makeSound() at runtime`
+            }
+          ]
+        },
+        {
+          heading: "2. Compile-Time Polymorphism (Static Binding)",
+          content: [
+            {
+              type: "text",
+              value: "Compile-Time Polymorphism (also called Static Binding or Early Binding) occurs when the Java compiler resolves which method to call during compilation. This is achieved through Method Overloading, where multiple methods in the same class share the exact same name but have different parameter lists (different count, types, or order of parameters)."
+            },
+            {
+              type: "code",
+              value: `class Calculator {\n    // Method 1: Adds two integers\n    int add(int a, int b) {\n        return a + b;\n    }\n\n    // Method 2: Adds three integers (Different parameter count)\n    int add(int a, int b, int c) {\n        return a + b + c;\n    }\n\n    // Method 3: Adds two decimals (Different parameter type)\n    double add(double a, double b) {\n        return a + b;\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "3. Runtime Polymorphism (Dynamic Binding)",
+          content: [
+            {
+              type: "text",
+              value: "Runtime Polymorphism (also called Dynamic Method Dispatch or Late Binding) occurs when the JVM determines which method implementation to execute while the program is actively running. This is achieved through Method Overriding, where a child class provides a custom implementation for a method already defined in its parent class, and the object is called via a parent class reference."
+            },
+            {
+              type: "code",
+              value: `// Superclass\nclass Vehicle {\n    void accelerate() {\n        System.out.println("Vehicle moving at standard speed.");\n    }\n}\n\n// Subclass 1\nclass SportsCar extends Vehicle {\n    @Override\n    void accelerate() {\n        System.out.println("SportsCar launches to 100 km/h in 3 seconds! 🏎️");\n    }\n}\n\n// Subclass 2\nclass Truck extends Vehicle {\n    @Override\n    void accelerate() {\n        System.out.println("Truck slowly gains momentum with heavy cargo. 🚛");\n    }\n}`
+            }
+          ]
+        },
+        {
+          heading: "4. Compile-Time vs Runtime Comparison",
+          content: [
+            {
+              type: "table",
+              headers: ["Feature", "Compile-Time Polymorphism", "Runtime Polymorphism"],
+              rows: [
+                ["Mechanism", "Method Overloading", "Method Overriding"],
+                ["Resolution Time", "Resolved by compiler at build time", "Resolved by JVM during application execution"],
+                ["Inheritance Required?", "No (happens within a single class)", "Yes (requires superclass and subclass relationship)"],
+                ["Performance", "Faster execution (method target is linked early)", "Slight runtime overhead due to virtual method lookup table"]
+              ]
+            }
+          ]
+        },
+        {
+          heading: "5. Real-Life Example: Universal Payment Gateway",
+          content: [
+            {
+              type: "text",
+              value: "Consider an e-commerce checkout system. The system defines a general 'PaymentMethod' interface or class with a method 'pay(amount)'. At checkout, the user can choose 'CreditCard', 'PayPal', or 'UPI'. The checkout controller doesn't need custom logic for every single payment app; it just calls 'selectedMethod.pay(amount)', and runtime polymorphism ensures the exact right payment gateway executes behind the scenes."
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Runtime Polymorphism (Overriding)",
+          code: `class Shape {\n    void draw() { System.out.println("Drawing a generic shape"); }\n}\n\nclass Circle extends Shape {\n    @Override\n    void draw() { System.out.println("Drawing a Circle ⭕"); }\n}\n\nclass Triangle extends Shape {\n    @Override\n    void draw() { System.out.println("Drawing a Triangle 🔺"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Shape s1 = new Circle();   // Upcasting\n        Shape s2 = new Triangle(); // Upcasting\n        \n        s1.draw(); // Calls Circle version\n        s2.draw(); // Calls Triangle version\n    }\n}`,
+          output: "Drawing a Circle ⭕\nDrawing a Triangle 🔺"
+        },
+        {
+          title: "Compile-Time Overloading",
+          code: `class NotificationService {\n    // Method 1: Send via email\n    void send(String email, String message) {\n        System.out.println("Email to " + email + ": " + message);\n    }\n\n    // Method 2: Send via SMS (different parameter types/count)\n    void send(long phoneNumber, String message) {\n        System.out.println("SMS to " + phoneNumber + ": " + message);\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        NotificationService ns = new NotificationService();\n        ns.send("user@test.com", "Welcome!");\n        ns.send(9876543210L, "Your OTP is 4421");\n    }\n}`,
+          output: "Email to user@test.com: Welcome!\nSMS to 9876543210: Your OTP is 4421"
+        },
+       
+      ],
+      conclusion: "Polymorphism decouples the caller from the exact concrete class being executed. By programming to a superclass reference or interface, your code becomes highly flexible, easily accommodating new child classes without needing modifications."
+    },
+    // ================= TOPIC: JAVA Abstraction ===========
+    {
+      id: "java-abstraction",
+      title: "Java Abstraction",
+      intro: "Abstraction is the concept of hiding complex internal implementation details and exposing only the essential functionality to the user. In Java, abstraction is achieved using Abstract Classes (0% to 100% abstraction) and Interfaces (100% abstraction).",
+      sections: [
+        {
+          heading: "1. Abstract Classes (`abstract` keyword)",
+          content: [
+            {
+              type: "text",
+              value: "An abstract class is a restricted class that cannot be instantiated directly with 'new'. It can contain both abstract methods (methods without a body that subclasses must implement) and regular concrete methods."
+            },
+            {
+              type: "code",
+              value: `abstract class Vehicle {\n    abstract void startEngine(); // Abstract method (no body)\n    void fuelUp() { System.out.println("Adding fuel..."); } // Concrete method\n}`
+            }
+          ]
+        },
+        {
+          heading: "2. Interfaces (`interface` keyword)",
+          content: [
+            {
+              type: "text",
+              value: "An interface is a completely abstract blueprint used to group related methods with empty bodies. A class implements an interface using the 'implements' keyword. Interfaces are Java's primary way to achieve multiple inheritance."
+            },
+            {
+              type: "code",
+              value: `interface Flyable {\n    void fly(); // Public and abstract by default\n}\n\nclass Airplane implements Flyable {\n    public void fly() { System.out.println("Flying at 30,000 feet"); }\n}`
+            }
+          ]
+        },
+        {
+          heading: "3. Abstract Class vs Interface",
+          content: [
+            {
+              type: "table",
+              headers: ["Feature", "Abstract Class", "Interface"],
+              rows: [
+                ["Keyword", "uses 'abstract class' and inherited via 'extends'", "uses 'interface' and implemented via 'implements'"],
+                ["Multiple Inheritance", "Can only extend ONE class", "Can implement MULTIPLE interfaces simultaneously"],
+                ["Constructors", "Can have instance constructors to initialize state", "Cannot have constructors"],
+                ["Fields / Variables", "Can have instance, static, non-final, or final fields", "All fields are implicitly public, static, and final (constants)"],
+                ["Method Implementation", "Can mix abstract methods and complete concrete methods", "Methods are abstract by default (can use 'default' or 'static' methods since Java 8)"]
+              ]
+            }
+          ]
+        },
+        {
+          heading: "4. Real-Life Example: Car Interior Mechanics vs Dashboard",
+          content: [
+            {
+              type: "text",
+              value: "When you drive a car, you interact with the abstracted dashboard interface: steering wheel, accelerator pedal, and brake. You don't need to know the intricate internal mechanics of fuel injection, transmission gears, or hydraulic pressure (implementation details). The interface gives you simple controls while hiding the complex machinery underneath."
+            }
+          ]
+        }
+      ],
+      // ==========================================
+      // PLAYGROUND (4 TABS WITH CODE ONLY)
+      // ==========================================
+      playground: [
+        {
+          title: "Abstract Class & Methods",
+          code: `abstract class Appliance {\n    String brand = "Generic";\n    \n    // Abstract method must be implemented by child\n    abstract void turnOn();\n    \n    // Concrete method shared by all children\n    void plugIn() {\n        System.out.println("Connected to 220V power.");\n    }\n}\n\nclass WashingMachine extends Appliance {\n    @Override\n    void turnOn() {\n        System.out.println("Washing cycle started 🧺");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Appliance a = new Appliance(); // ERROR: Cannot instantiate abstract class\n        WashingMachine wm = new WashingMachine();\n        wm.plugIn();\n        wm.turnOn();\n    }\n}`,
+          output: "Connected to 220V power.\nWashing cycle started 🧺"
+        },
+        {
+          title: "Basic Interface",
+          code: `interface PaymentGateway {\n    void processPayment(double amount);\n}\n\nclass StripeGateway implements PaymentGateway {\n    public void processPayment(double amount) {\n        System.out.println("Processing $" + amount + " securely via Stripe.");\n    }\n}\n\nclass RazorpayGateway implements PaymentGateway {\n    public void processPayment(double amount) {\n        System.out.println("Processing $" + amount + " via Razorpay UPI.");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        PaymentGateway pg = new StripeGateway();\n        pg.processPayment(99.50);\n    }\n}`,
+          output: "Processing $99.5 via Stripe."
+        },
+        {
+          title: "Multiple Inheritance via Interfaces",
+          code: `interface Printable {\n    void print();\n}\n\ninterface Shareable {\n    void shareEmail();\n}\n\n// Class implementing two interfaces simultaneously\nclass Document implements Printable, Shareable {\n    public void print() {\n        System.out.println("Printing document on Laser Printer...");\n    }\n    public void shareEmail() {\n        System.out.println("Sending PDF attachment via Email...");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Document doc = new Document();\n        doc.print();\n        doc.shareEmail();\n    }\n}`,
+          output: "Printing document on Laser Printer...\nSending PDF attachment via Email..."
+        },
+        {
+          title: "Java 8+ Default Methods in Interfaces",
+          code: `interface SmartDevice {\n    void turnOn();\n    \n    // 'default' allows interfaces to have concrete method bodies without breaking existing implementations\n    default void runDiagnostics() {\n        System.out.println("[System] Diagnostics OK. Firmware v2.0");\n    }\n}\n\nclass SmartTV implements SmartDevice {\n    public void turnOn() { System.out.println("Smart TV Screen ON 📺"); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        SmartTV tv = new SmartTV();\n        tv.runDiagnostics(); // Calling default interface method\n        tv.turnOn();\n    }\n}`,
+          output: "[System] Diagnostics OK. Firmware v2.0\nSmart TV Screen ON 📺"
+        }
+      ],
+      conclusion: "Abstraction enables you to manage complexity by focusing on what an object does rather than how it does it. Combining abstract classes for shared core functionality and interfaces for flexible API design creates modular, maintainable enterprise software."
+    },
   ],
 };

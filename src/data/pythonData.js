@@ -255,7 +255,6 @@ export const pythonData = {
       ],
       conclusion: "Congratulations! With Python installed and VS Code set up, your computer is now a powerful development machine ready to write and execute any Python application.",
     },
-    
     // ================= TOPIC 2: PYTHON variables ================
     {
       id: "variables",
