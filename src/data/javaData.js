@@ -38,7 +38,7 @@ export const javaData = {
   subjectTitle: "Java programming",
   subjectCode: "java",
   topics: [
-    // ================= TOPIC 1.0: Introduction to Java =========
+    // ================= TOPIC 1.0: Introduction to Java =====
     {
       id: "java-introduction",
       title: "Introduction to Java",
@@ -120,7 +120,7 @@ export const javaData = {
       ],
       conclusion: "Java is an incredibly powerful and foundational language to learn. Its strict structure and object-oriented principles teach excellent software design patterns, making it highly valued in enterprise-level development.",
     },
-    // ================= TOPIC 1.1: Java Installation ============
+    // ================= TOPIC 1.1: Java Installation ========
     {
       id: "java-installation",
       title: "Installing Java (JDK)",
@@ -184,7 +184,7 @@ export const javaData = {
       ],
       conclusion: "Setting up your JAVA_HOME and Path variables is the most important step on Windows. It allows you to compile and run Java programs from any folder using your command prompt.",
     },
-    // ================= TOPIC 1.2: IntelliJ IDEA Setup =================
+    // ================= TOPIC 1.2: IntelliJ IDEA Setup ======
     {
       id: "java-setup",
       title: "Environment Setup (IntelliJ IDEA)",
@@ -266,7 +266,7 @@ export const javaData = {
       ],
       conclusion: "Congratulations! With the JDK installed and IntelliJ IDEA set up, your computer is now a powerful development machine ready to write and execute enterprise-grade Java applications.",
     },
-    // ================= TOPIC 2: JAVA FLOW CONTROL  ============
+    // ================= TOPIC 2: JAVA FLOW CONTROL  =========
      {
   id: "java-flow-control",
   title: "Java Flow Control",
@@ -485,7 +485,7 @@ export const javaData = {
   ],
   conclusion: "Flow control statements are crucial for making Java programs dynamic and flexible. Understanding decision-making, loops, and jump statements is fundamental for writing logical and efficient code."
      },
-    // ================= TOPIC 2: JAVA comment ==================
+    // ================= TOPIC 2: JAVA comment ===============
     {
       id: "java-comments",
       title: "Java Comments",
@@ -649,7 +649,7 @@ System.out.println(name);
       conclusion:
         "Comments in Java are essential for making the code readable and maintainable. They help other developers understand the logic of the program without affecting the actual execution of the code.",
     },
-    // ================= TOPIC 2: JAVA data types ===============
+    // ================= TOPIC 2: JAVA data types ============
     {
   id: "java-data-types",
   title: "Java Data Types",
@@ -736,7 +736,7 @@ System.out.println(name);
   ],
   conclusion: "Choosing the correct data type is essential for memory optimization and ensuring your program processes data correctly. Primitive types handle simple values, while non-primitive types help you work with complex objects and data structures."
     },
-    // ================= TOPIC 2: JAVA variables not done =================
+    // ================= TOPIC 2: JAVA variables not done ====
     {
   id: "java-variables",
   title: "Java Variables",
@@ -1277,7 +1277,7 @@ public class Main {
   ],
   conclusion: "The Scanner class is the cornerstone of user interaction in Core Java. By mastering its diverse methods—from reading simple integers to parsing full sentences and arrays—you can easily handle any type of user input and build highly interactive console applications."
     },
-    // ================= TOPIC 2: JAVA type casting =================
+    // ================= TOPIC 2: JAVA type casting ==========
     {
   id: "java-type-casting",
   title: "Java Type Casting",
@@ -1370,7 +1370,7 @@ public class Main {
   ],
   conclusion: "Type casting is highly useful when performing calculations. Remember: Widening casting is safe and automatic, but Narrowing casting requires manual intervention because you risk losing precision or data."
     },
-     // ================= TOPIC 2: JAVA Opraters =================
+     // ================= TOPIC 2: JAVA Opraters =============
      {
   id: "java-operators",
   title: "Java Operators",
@@ -1576,7 +1576,7 @@ public class Main {
   ],
   conclusion: "Operators are the building blocks of any algorithm. Mastering the different types of operators and their precedence is essential for writing accurate and efficient Java code."
      },
-      // ================= TOPIC 2: JAVA Array =================
+      // ================= TOPIC 2: JAVA Array ===============
      {
   id: "java-arrays",
   title: "Java Arrays",
@@ -2000,7 +2000,7 @@ public class Main {
   ],
   conclusion: "Loops are the engine that drives repetitive logic in your software. Whether you are searching through an array of data, processing thousands of user inputs, or building complex game physics, choosing the right loop makes your code both efficient and easily readable. As a rule of thumb: use a 'for' loop when you know the exact iterations, use a 'while' loop for unknown iterations, and use a 'for-each' loop whenever you are reading arrays."
     },
-    // ================= TOPIC: JAVA Strings ==================
+    // ================= TOPIC: JAVA Strings =================
     {
       id: "java-strings",
       title: "Java Strings",
@@ -2697,7 +2697,7 @@ public class Main {
       ],
       conclusion: "Polymorphism decouples the caller from the exact concrete class being executed. By programming to a superclass reference or interface, your code becomes highly flexible, easily accommodating new child classes without needing modifications."
     },
-    // ================= TOPIC: JAVA Abstraction ===========
+    // ================= TOPIC: JAVA Abstraction =============
     {
       id: "java-abstraction",
       title: "Java Abstraction",
