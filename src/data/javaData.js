@@ -2028,7 +2028,7 @@ public class Main {
             },
             {
               type: "code",
-              value: `String str1 = "Java";\nString str2 = "Programming";\n\nSystem.out.println(str1 + " " + str2);      // Java Programming\nSystem.out.println(str1.concat(" 17"));     // Java 17`,
+              value: `String str1 = "Java";\nString str2 = "Code";\n\nSystem.out.println(str1 + " " + str2);      // Java CodenSystem.out.println(str1.concat(" 17"));     // Java 17`,
             },
           ],
         },
