@@ -2782,5 +2782,819 @@ public class Main {
       ],
       conclusion: "Abstraction enables you to manage complexity by focusing on what an object does rather than how it does it. Combining abstract classes for shared core functionality and interfaces for flexible API design creates modular, maintainable enterprise software."
     },
+     // ================= TOPIC: JAVA Interfaces =============
+    {
+  "id": "java-interfaces",
+  "title": "Java Interfaces",
+  "subjectCode": "java",
+  "intro": "Imagine you are building a smart home system where every device (lights, fans, locks) needs to be turned on and off. Instead of writing completely different logic for each, you create a standard contract that every device must follow. This is exactly what a Java Interface is! An interface in Java is a blueprint of a class. It contains abstract methods (methods without a body) that define 'what' an object can do, leaving the 'how' it does it to the specific class that implements the interface.",
+  "sections": [
+    {
+      "heading": "1. Declaring and Implementing an Interface",
+      "content": [
+        {
+          "type": "text",
+          "value": "To create an interface, you use the <code>interface</code> keyword instead of <code>class</code>. By default, all methods inside an interface are <code>public</code> and <code>abstract</code> (meaning they have no body). To use an interface, a class must 'sign the contract' using the <code>implements</code> keyword and provide the actual code for all the interface's methods."
+        },
+        {
+          "type": "code",
+          "value": "interface Animal {\n  // Interface methods (no body)\n  public void animalSound();\n  public void sleep();\n}\n\n// Pig \"implements\" the Animal interface\nclass Pig implements Animal {\n  public void animalSound() {\n    // The body of animalSound() is provided here\n    System.out.println(\"The pig says: wee wee\");\n  }\n  public void sleep() {\n    // The body of sleep() is provided here\n    System.out.println(\"Zzz\");\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "2. Why Use Interfaces?",
+      "content": [
+        {
+          "type": "text",
+          "value": "Interfaces are a fundamental part of object-oriented programming in Java. They are primarily used for three reasons:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1. <strong>To achieve total abstraction:</strong> You can hide the complex implementation details and only show the essential actions an object can perform.",
+            "2. <strong>To support multiple inheritance:</strong> Java classes cannot inherit from more than one superclass (no multiple inheritance). However, a single class CAN implement multiple interfaces!",
+            "3. <strong>To create loose coupling:</strong> Interfaces allow you to build flexible and modular systems by relying on contracts rather than concrete implementations."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. Multiple Interfaces",
+      "content": [
+        {
+          "type": "text",
+          "value": "To implement multiple interfaces, separate them with a comma. This is Java's safe way of handling multiple inheritance without the dreaded 'Diamond Problem'."
+        },
+        {
+          "type": "code",
+          "value": "interface FirstInterface {\n  public void myMethod();\n}\n\ninterface SecondInterface {\n  public void myOtherMethod();\n}\n\nclass DemoClass implements FirstInterface, SecondInterface {\n  public void myMethod() {\n    System.out.println(\"Text from first interface\");\n  }\n  public void myOtherMethod() {\n    System.out.println(\"Text from second interface\");\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "4. Modern Java Interfaces (Default & Static Methods)",
+      "content": [
+        {
+          "type": "text",
+          "value": "Historically, interfaces could only contain abstract methods. However, starting from Java 8, interfaces were upgraded. They can now contain <strong>default</strong> and <strong>static</strong> methods that actually have a body. This allows developers to add new methods to existing interfaces without breaking the older classes that already implement them."
+        },
+        {
+          "type": "code",
+          "value": "interface Vehicle {\n  // Abstract method\n  void drive();\n\n  // Default method (has a body)\n  default void startEngine() {\n    System.out.println(\"Engine is starting... vroom!\");\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "Basic Interface",
+      "code": "interface Shape {\n    void draw();\n}\n\nclass Circle implements Shape {\n    public void draw() {\n        System.out.println(\"Drawing a Circle\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Shape myShape = new Circle();\n        myShape.draw();\n    }\n}",
+      "output": "Drawing a Circle"
+    },
+    {
+      "title": "Multiple Interfaces",
+      "code": "interface Flyable {\n    void fly();\n}\n\ninterface Swimmable {\n    void swim();\n}\n\nclass Duck implements Flyable, Swimmable {\n    public void fly() {\n        System.out.println(\"Duck is flying in the sky.\");\n    }\n    public void swim() {\n        System.out.println(\"Duck is swimming in the pond.\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Duck daffy = new Duck();\n        daffy.fly();\n        daffy.swim();\n    }\n}",
+      "output": "Duck is flying in the sky.\nDuck is swimming in the pond."
+    },
+    {
+      "title": "Default Methods",
+      "code": "interface Camera {\n    void takePhoto();\n    \n    default void recordVideo() {\n        System.out.println(\"Recording video in 1080p...\");\n    }\n}\n\nclass Smartphone implements Camera {\n    public void takePhoto() {\n        System.out.println(\"Snap! Photo saved.\");\n    }\n    // We don't have to implement recordVideo() because it has a default body!\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Smartphone myPhone = new Smartphone();\n        myPhone.takePhoto();\n        myPhone.recordVideo();\n    }\n}",
+      "output": "Snap! Photo saved.\nRecording video in 1080p..."
+    }
+  ],
+  "conclusion": "Interfaces form the backbone of robust, scalable Java applications. By defining clear contracts (the 'what') while hiding the logic (the 'how'), they help you build systems that are easy to maintain and expand. Whether you are using them to bypass Java's single-inheritance rule or to design clean APIs, mastering interfaces is a massive leap forward in your object-oriented programming journey."
+    },
+    // ================= TOPIC: JAVA enums =============
+    {
+  "id": "java-enums",
+  "title": "Java Enums",
+  "subjectCode": "java",
+  "intro": "Imagine you are building a pizza ordering app. The pizza sizes can only be SMALL, MEDIUM, LARGE, or EXTRA_LARGE. If you use standard String variables to store the size, a typo like \"SML\" or \"HUGE\" could slip in and crash your system. This is where Java Enums shine! An `enum` (short for 'enumerations') is a special data type that represents a group of constants (unchangeable, predefined variables). They make your code safer by ensuring a variable can only hold one of a few predefined values.",
+  "sections": [
+    {
+      "heading": "1. Creating and Using an Enum",
+      "content": [
+        {
+          "type": "text",
+          "value": "To create an enum, use the <code>enum</code> keyword (instead of class or interface), and separate the constants with a comma. By convention, enum constants are written in <strong>ALL_CAPS</strong>."
+        },
+        {
+          "type": "code",
+          "value": "enum Level {\n  LOW,\n  MEDIUM,\n  HIGH\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    // Accessing an enum constant\n    Level myVar = Level.MEDIUM;\n    System.out.println(myVar);\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "2. Enums in Switch Statements",
+      "content": [
+        {
+          "type": "text",
+          "value": "Enums are incredibly useful inside <code>switch</code> statements to check for corresponding values. Because the compiler knows all the possible values of an enum, it works seamlessly with switch cases."
+        },
+        {
+          "type": "code",
+          "value": "enum Day {\n  MONDAY, FRIDAY, SUNDAY\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    Day today = Day.FRIDAY;\n\n    switch(today) {\n      case MONDAY:\n        System.out.println(\"Back to work!\");\n        break;\n      case FRIDAY:\n        System.out.println(\"Weekend is almost here!\");\n        break;\n      case SUNDAY:\n        System.out.println(\"Rest day.\");\n        break;\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "3. Looping Through an Enum",
+      "content": [
+        {
+          "type": "text",
+          "value": "Java automatically adds a few handy methods to every enum you create. One of the most useful is the <code>values()</code> method, which returns an array of all enum constants. This makes it very easy to loop through the options."
+        },
+        {
+          "type": "code",
+          "value": "for (Level myVar : Level.values()) {\n  System.out.println(myVar);\n}"
+        }
+      ]
+    },
+    {
+      "heading": "4. Advanced Enums (Constructors and Attributes)",
+      "content": [
+        {
+          "type": "text",
+          "value": "Behind the scenes, an enum is actually a special type of class. This means it can have attributes, methods, and even constructors! If you want your enum constants to hold specific data (like a numeric value or a description), you can define a constructor."
+        },
+        {
+          "type": "code",
+          "value": "enum Size {\n  SMALL(10),\n  MEDIUM(14),\n  LARGE(18);\n\n  // Attribute\n  private final int diameter;\n\n  // Constructor (must be private or package-private in enums)\n  Size(int diameter) {\n    this.diameter = diameter;\n  }\n\n  // Method to get the value\n  public int getDiameter() {\n    return diameter;\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "Basic Enum Definition",
+      "code": "enum Status {\n    PENDING,\n    SHIPPED,\n    DELIVERED\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Status orderStatus = Status.SHIPPED;\n        System.out.println(\"Current order status is: \" + orderStatus);\n    }\n}",
+      "output": "Current order status is: SHIPPED"
+    },
+    {
+      "title": "Iterating over Enums",
+      "code": "enum Difficulty {\n    EASY,\n    NORMAL,\n    HARD,\n    EXPERT\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Available Game Difficulties:\");\n        for (Difficulty level : Difficulty.values()) {\n            System.out.println(\"- \" + level);\n        }\n    }\n}",
+      "output": "Available Game Difficulties:\n- EASY\n- NORMAL\n- HARD\n- EXPERT"
+    },
+    {
+      "title": "Enums with Custom Values",
+      "code": "enum TrafficLight {\n    RED(\"Stop\"),\n    YELLOW(\"Slow Down\"),\n    GREEN(\"Go\");\n\n    private final String action;\n\n    TrafficLight(String action) {\n        this.action = action;\n    }\n\n    public String getAction() {\n        return action;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        TrafficLight currentLight = TrafficLight.RED;\n        System.out.println(\"The light is \" + currentLight + \", so you must: \" + currentLight.getAction());\n    }\n}",
+      "output": "The light is RED, so you must: Stop"
+    }
+  ],
+  "conclusion": "Enums are a simple yet incredibly powerful feature in Java. By replacing arbitrary strings and 'magic numbers' with fixed, named constants, enums make your code type-safe, self-documenting, and much less prone to bugs. Whenever you have a variable that should only hold a specific set of values (like months of the year, user roles, or payment methods), reach for a Java Enum!"
+    },
+    // ================= TOPIC: JAVA packages =============
+   {
+  "id": "java-packages",
+  "title": "Java Packages",
+  "subjectCode": "java",
+  "intro": "Imagine keeping every single file on your computer in one giant folder. It would be impossible to find anything, and you couldn't have two files with the same name! In Java, a package is exactly like a folder or directory. It is used to group related classes, interfaces, and sub-packages together. Packages keep your massive projects organized, prevent naming conflicts (two classes can be named 'User' if they are in different packages), and help enforce access control.",
+  "sections": [
+    {
+      "heading": "1. Types of Packages",
+      "content": [
+        {
+          "type": "text",
+          "value": "Java packages are divided into two main categories. First are Built-in Packages (The Java API): These come pre-installed with the Java Development Kit (JDK) and contain thousands of pre-written classes ready for you to use. Second are User-Defined Packages: These are packages that you create yourself to organize your own code."
+        }
+      ]
+    },
+    {
+      "heading": "2. Common Built-in Packages",
+      "content": [
+        {
+          "type": "text",
+          "value": "The Java API is vast. Here are some of the most frequently used built-in packages:"
+        },
+        {
+          "type": "table",
+          "headers": ["Package Name", "Description", "Common Classes"],
+          "rows": [
+            ["java.lang", "Core classes. This is the ONLY package imported automatically in every Java program.", "String, Math, System, Thread"],
+            ["java.util", "Utility classes, including data structures, random numbers, and the Scanner.", "Scanner, ArrayList, Random, HashMap"],
+            ["java.io", "Classes for reading and writing data (Input/Output).", "File, InputStream, FileWriter"],
+            ["java.net", "Classes for networking applications.", "URL, Socket, HttpURLConnection"],
+            ["java.time", "The modern Date and Time API introduced in Java 8.", "LocalDate, LocalTime, Duration"]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "3. The 'import' Keyword",
+      "content": [
+        {
+          "type": "text",
+          "value": "To use a class from a built-in or external package, you must bring it into your file using the 'import' keyword. You can either import a single specific class, or import an entire package using the wildcard (*) symbol."
+        },
+        {
+          "type": "code",
+          "value": "// 1. Importing a single specific class (Recommended)\nimport java.util.Scanner;\n\n// 2. Importing ALL classes in the java.util package\nimport java.util.*;\n\npublic class Main {\n  public static void main(String[] args) {\n    Scanner myObj = new Scanner(System.in);\n    System.out.println(\"Scanner class is now available!\");\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "4. Creating User-Defined Packages",
+      "content": [
+        {
+          "type": "text",
+          "value": "To create your own package, you must use the 'package' keyword. Crucially, the package declaration must be the very first line of code in your Java file (before any imports or class declarations). By convention, package names are written in all lowercase to avoid conflict with class names. Companies often use their reversed domain name to ensure global uniqueness (e.g., 'com.google.maps')."
+        },
+        {
+          "type": "code",
+          "value": "package com.mycompany.ecommerce;\n\nimport java.util.ArrayList;\n\npublic class ShoppingCart {\n  // Class implementation goes here\n}"
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "Specific Import",
+      "code": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        // We imported ArrayList, so we can use it directly\n        ArrayList<String> list = new ArrayList<>();\n        list.add(\"Java\");\n        list.add(\"Packages\");\n        \n        System.out.println(\"My list contains: \" + list);\n    }\n}",
+      "output": "My list contains: [Java, Packages]"
+    },
+    {
+      "title": "Wildcard Import",
+      "code": "import java.util.*; // Imports everything in java.util\n\npublic class Main {\n    public static void main(String[] args) {\n        // We can use Random, Scanner, ArrayList, etc., without specific imports\n        Random rand = new Random(42); // Seeded for predictable output\n        int randomNumber = rand.nextInt(100);\n        \n        System.out.println(\"Random number generated using java.util.* : \" + randomNumber);\n    }\n}",
+      "output": "Random number generated using java.util.* : 30"
+    },
+    {
+      "title": "Fully Qualified Name",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        // If you don't want to use 'import', you can write the full package path\n        // This is called the 'fully qualified name'\n        java.time.LocalDate today = java.time.LocalDate.now();\n        \n        System.out.println(\"Today's date (using fully qualified name): \" + today);\n    }\n}",
+      "output": "Today's date (using fully qualified name): 2026-09-01"
+    },
+    {
+      "title": "The Default Package",
+      "code": "// Notice there are no import statements here!\n\npublic class Main {\n    public static void main(String[] args) {\n        // Classes like String, Math, and System belong to 'java.lang'\n        // Java automatically imports 'java.lang.*' for you in every file.\n        \n        String language = \"Java\";\n        double power = Math.pow(2, 3);\n        \n        System.out.println(\"Language: \" + language);\n        System.out.println(\"2 to the power of 3 is: \" + power);\n    }\n}",
+      "output": "Language: Java\n2 to the power of 3 is: 8.0"
+    }
+  ],
+  "conclusion": "Packages are the architectural foundation of any serious Java application. By acting as directories, they keep your code clean, modular, and easy to navigate. Understanding how to utilize the built-in Java API packages will save you thousands of hours of rewriting code, while mastering user-defined packages will ensure your own codebases remain scalable and professional."
+  },
+  // ================= TOPIC: JAVA Exception =============
+   {
+  "id": "java-exception-handling",
+  "title": "Java Exception Handling",
+  "subjectCode": "java",
+  "intro": "Imagine you are driving a car and suddenly a tire bursts. If you don't know how to handle it, the car crashes. But if you have a spare tire and know how to change it, you can safely continue your journey. In Java, a 'burst tire' is called an Exception—an unexpected event that stops your program. Exception Handling is the mechanism we use to manage these runtime errors so that the normal flow of the application can be maintained without crashing.",
+  "sections": [
+    {
+      "heading": "1. The 'try' and 'catch' Blocks",
+      "content": [
+        {
+          "type": "text",
+          "value": "The most basic way to handle exceptions is using a try-catch block. The 'try' block contains the code that might generate an error. If an error occurs, Java instantly jumps to the 'catch' block, which contains the code to handle the problem."
+        },
+        {
+          "type": "code",
+          "value": "public class Main {\n  public static void main(String[] args) {\n    try {\n      int result = 10 / 0; // This will cause an error (division by zero)\n      System.out.println(\"This line will not print\");\n    } catch (Exception e) {\n      System.out.println(\"Something went wrong: \" + e.getMessage());\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "2. The 'finally' Block",
+      "content": [
+        {
+          "type": "text",
+          "value": "Sometimes you have code that MUST run, regardless of whether an error happened or not (like closing a database connection or a file). For this, we use the 'finally' block. It is placed after the catch block and will always execute."
+        },
+        {
+          "type": "code",
+          "value": "try {\n  int[] myNumbers = {1, 2, 3};\n  System.out.println(myNumbers[10]);\n} catch (Exception e) {\n  System.out.println(\"Error: Index is out of bounds.\");\n} finally {\n  System.out.println(\"The 'try catch' is finished.\");\n}"
+        }
+      ]
+    },
+    {
+      "heading": "3. Types of Exceptions",
+      "content": [
+        {
+          "type": "text",
+          "value": "Exceptions in Java fall into two main categories: Checked and Unchecked."
+        },
+        {
+          "type": "list",
+          "items": [
+            "1. Checked Exceptions: Checked at compile-time. Java forces you to handle these (like reading a file that might not exist) before you can even run the program.",
+            "2. Unchecked Exceptions: Checked at runtime. These are usually programming logic errors (like dividing by zero or accessing a bad array index)."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. The 'throw' Keyword",
+      "content": [
+        {
+          "type": "text",
+          "value": "The 'throw' keyword allows you to manually trigger a custom exception. This is very useful when you are validating user input and want to block invalid data."
+        },
+        {
+          "type": "code",
+          "value": "public class Main {\n  static void checkAge(int age) {\n    if (age < 18) {\n      throw new ArithmeticException(\"Access denied - You must be at least 18 years old.\");\n    } else {\n      System.out.println(\"Access granted - You are old enough!\");\n    }\n  }\n\n  public static void main(String[] args) {\n    checkAge(15);\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "Basic Try-Catch",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Program started...\");\n        \n        try {\n            int divideByZero = 5 / 0;\n            System.out.println(\"Rest of try block\");\n        } catch (ArithmeticException e) {\n            System.out.println(\"ArithmeticException caught: Cannot divide by zero!\");\n        }\n        \n        System.out.println(\"Program finished successfully!\");\n    }\n}",
+      "output": "Program started...\nArithmeticException caught: Cannot divide by zero!\nProgram finished successfully!"
+    },
+    {
+      "title": "Using Finally",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        try {\n            String text = null;\n            System.out.println(\"Text length is: \" + text.length());\n        } catch (NullPointerException e) {\n            System.out.println(\"Caught a Null Pointer Exception!\");\n        } finally {\n            System.out.println(\"This finally block always executes, cleaning things up.\");\n        }\n    }\n}",
+      "output": "Caught a Null Pointer Exception!\nThis finally block always executes, cleaning things up."
+    },
+    {
+      "title": "Custom Throw",
+      "code": "public class Main {\n    public static void checkPasswordLength(String password) {\n        if (password.length() < 6) {\n            throw new IllegalArgumentException(\"Password is too short!\");\n        }\n        System.out.println(\"Password accepted.\");\n    }\n\n    public static void main(String[] args) {\n        try {\n            checkPasswordLength(\"12345\");\n        } catch (IllegalArgumentException e) {\n            System.out.println(\"Validation Error: \" + e.getMessage());\n        }\n    }\n}",
+      "output": "Validation Error: Password is too short!"
+    }
+  ],
+  "conclusion": "Exception handling is what separates a fragile application from a robust, professional one. By correctly utilizing try, catch, finally, and throw, you ensure that your program can gracefully recover from unexpected errors, provide helpful feedback to users, and avoid sudden, catastrophic crashes."
+   },
+   // ================= TOPIC: JAVA File Handling =============
+  {
+  "id": "java-file-handling",
+  "title": "Java File Handling",
+  "subjectCode": "java",
+  "intro": "Every time you turn off your computer, all the data stored in your Java variables and arrays is wiped out because RAM is volatile. If you want to save data permanently—like a high score in a game, or user details for a login system—you need to write it to a file on your hard drive. Java File Handling allows you to create, read, update, and delete files primarily using the classes found in the 'java.io' package.",
+  "sections": [
+    {
+      "heading": "1. Creating a File",
+      "content": [
+        {
+          "type": "text",
+          "value": "To create a file, we use the 'java.io.File' class and its 'createNewFile()' method. Because interacting with the file system can fail (e.g., the hard drive is full, or you lack permission), Java forces you to place this code inside a 'try-catch' block to handle the 'IOException'."
+        },
+        {
+          "type": "code",
+          "value": "import java.io.File; \nimport java.io.IOException;\n\npublic class Main {\n  public static void main(String[] args) {\n    try {\n      File myObj = new File(\"data.txt\");\n      if (myObj.createNewFile()) {\n        System.out.println(\"File created: \" + myObj.getName());\n      } else {\n        System.out.println(\"File already exists.\");\n      }\n    } catch (IOException e) {\n      System.out.println(\"An error occurred.\");\n      e.printStackTrace();\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "2. Writing to a File",
+      "content": [
+        {
+          "type": "text",
+          "value": "To write text into a file, Java provides the 'FileWriter' class. It provides a simple 'write()' method. Crucial step: You must always call the 'close()' method when you are finished writing. If you don't close the writer, the data might remain in a temporary memory buffer and never actually be saved to the file!"
+        },
+        {
+          "type": "code",
+          "value": "import java.io.FileWriter;\nimport java.io.IOException;\n\npublic class Main {\n  public static void main(String[] args) {\n    try {\n      FileWriter myWriter = new FileWriter(\"data.txt\");\n      myWriter.write(\"Java File Handling is surprisingly easy!\");\n      myWriter.close(); // Don't forget this!\n      System.out.println(\"Successfully wrote to the file.\");\n    } catch (IOException e) {\n      System.out.println(\"An error occurred.\");\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "3. Reading from a File",
+      "content": [
+        {
+          "type": "text",
+          "value": "To read the contents of a text file, we can use the familiar 'Scanner' class. However, instead of passing 'System.in' (the keyboard) to the Scanner, we pass our 'File' object. We then use a 'while' loop combined with the 'hasNextLine()' method to read the file line by line until we reach the end."
+        },
+        {
+          "type": "code",
+          "value": "import java.io.File;\nimport java.io.FileNotFoundException;\nimport java.util.Scanner;\n\npublic class Main {\n  public static void main(String[] args) {\n    try {\n      File myObj = new File(\"data.txt\");\n      Scanner myReader = new Scanner(myObj);\n      while (myReader.hasNextLine()) {\n        String data = myReader.nextLine();\n        System.out.println(data);\n      }\n      myReader.close();\n    } catch (FileNotFoundException e) {\n      System.out.println(\"An error occurred.\");\n    }\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "4. Common File Class Methods",
+      "content": [
+        {
+          "type": "text",
+          "value": "The 'File' class comes with many useful methods to check the properties of a file."
+        },
+        {
+          "type": "table",
+          "headers": ["Method", "Description", "Return Type"],
+          "rows": [
+            ["canRead()", "Tests whether the file is readable.", "Boolean"],
+            ["canWrite()", "Tests whether the file is writable.", "Boolean"],
+            ["exists()", "Tests whether the file actually exists.", "Boolean"],
+            ["getName()", "Returns the name of the file.", "String"],
+            ["getAbsolutePath()", "Returns the full path of the file.", "String"],
+            ["length()", "Returns the size of the file in bytes.", "Long"],
+            ["delete()", "Deletes a file or an empty directory.", "Boolean"]
+          ]
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "Write to File",
+      "code": "import java.io.FileWriter;\nimport java.io.IOException;\n\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            // Creating a writer. If \"log.txt\" doesn't exist, it creates it.\n            FileWriter writer = new FileWriter(\"log.txt\");\n            writer.write(\"User Logged In at 10:00 AM\\n\");\n            writer.write(\"Action: Clicked 'Save' button\");\n            \n            writer.close();\n            System.out.println(\"Log entries saved successfully!\");\n        } catch (IOException e) {\n            System.out.println(\"An error occurred while writing.\");\n        }\n    }\n}",
+      "output": "Log entries saved successfully!"
+    },
+    {
+      "title": "Read a File",
+      "code": "import java.io.File;\nimport java.io.FileNotFoundException;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        try {\n            // Assuming \"log.txt\" was created by the previous step\n            File fileToRead = new File(\"log.txt\");\n            Scanner scanner = new Scanner(fileToRead);\n            \n            System.out.println(\"--- Reading File Contents ---\");\n            while (scanner.hasNextLine()) {\n                System.out.println(scanner.nextLine());\n            }\n            scanner.close();\n        } catch (FileNotFoundException e) {\n            System.out.println(\"Could not find the specified file.\");\n        }\n    }\n}",
+      "output": "--- Reading File Contents ---\nUser Logged In at 10:00 AM\nAction: Clicked 'Save' button"
+    },
+    {
+      "title": "File Information",
+      "code": "import java.io.File;\n\npublic class Main {\n    public static void main(String[] args) {\n        File myFile = new File(\"log.txt\");\n        \n        if (myFile.exists()) {\n            System.out.println(\"File Name: \" + myFile.getName());\n            System.out.println(\"File Size: \" + myFile.length() + \" bytes\");\n            System.out.println(\"Is Writable? \" + myFile.canWrite());\n            \n            // Let's clean up and delete it\n            if (myFile.delete()) {\n                System.out.println(\"\\nSuccess: File was deleted.\");\n            }\n        } else {\n            System.out.println(\"The file does not exist.\");\n        }\n    }\n}",
+      "output": "File Name: log.txt\nFile Size: 56 bytes\nIs Writable? true\n\nSuccess: File was deleted."
+    }
+  ],
+  "conclusion": "File handling is a gateway to creating realistic, persistent applications. By combining the 'File', 'FileWriter', and 'Scanner' classes, you can easily store user preferences, save game states, or parse large datasets. For even faster and more advanced file operations, modern Java developers often use the 'java.nio.file.Files' class, but mastering the basic 'java.io' package is an essential first step!"
+  },
+  // ================= TOPIC: JAVA  Collections =============
+  {
+  "id": "java-collections",
+  "title": "Java Collections",
+  "subjectCode": "java",
+  "intro": "Imagine trying to store a list of users for a website using a standard Java Array. If you create an array of size 100, what happens when the 101st user signs up? The program crashes! Standard arrays have a fixed size. To solve this, Java provides the Collections Framework—a set of built-in classes and interfaces that act as dynamic data structures. Collections can grow and shrink automatically as you add or remove elements, making them essential for real-world programming.",
+  "sections": [
+    {
+      "heading": "1. The Core Interfaces",
+      "content": [
+        {
+          "type": "text",
+          "value": "The Java Collections Framework is built on a few core interfaces that dictate how different data structures behave. The most commonly used are:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "1. List: An ordered collection that allows duplicate values. Best when you need an array that can grow (e.g., 'ArrayList').",
+            "2. Set: A collection that refuses duplicate elements. Perfect for maintaining unique items (e.g., 'HashSet').",
+            "3. Map: A collection that stores data in key-value pairs, similar to a real-world dictionary (e.g., 'HashMap')."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "2. Working with ArrayList",
+      "content": [
+        {
+          "type": "text",
+          "value": "An 'ArrayList' is a resizable array. You can add, remove, and modify elements without worrying about its initial size. Note that collections can only store Objects (like 'Integer' or 'String'), not primitive types (like 'int' or 'double')."
+        },
+        {
+          "type": "code",
+          "value": "import java.util.ArrayList;\n\npublic class Main {\n  public static void main(String[] args) {\n    ArrayList<String> cars = new ArrayList<>();\n    cars.add(\"Volvo\");\n    cars.add(\"BMW\");\n    cars.add(\"Ford\");\n    \n    System.out.println(cars.get(0)); // Output: Volvo\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "3. Ensuring Uniqueness with HashSet",
+      "content": [
+        {
+          "type": "text",
+          "value": "A 'HashSet' is a collection where every item must be unique. If you try to add an item that already exists, the HashSet will simply ignore it. It does not guarantee that the order will remain constant over time, but it is incredibly fast for searching."
+        },
+        {
+          "type": "code",
+          "value": "import java.util.HashSet;\n\npublic class Main {\n  public static void main(String[] args) {\n    HashSet<String> cars = new HashSet<>();\n    cars.add(\"Volvo\");\n    cars.add(\"BMW\");\n    cars.add(\"Volvo\"); // This duplicate is ignored\n    \n    System.out.println(cars.size()); // Output: 2\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "4. Key-Value Pairs with HashMap",
+      "content": [
+        {
+          "type": "text",
+          "value": "A 'HashMap' maps keys to values. Instead of accessing elements by a numeric index (like an array), you access them using their key. This is perfect for fast lookups, like finding a user's email by their username."
+        },
+        {
+          "type": "code",
+          "value": "import java.util.HashMap;\n\npublic class Main {\n  public static void main(String[] args) {\n    HashMap<String, String> capitalCities = new HashMap<>();\n    capitalCities.put(\"England\", \"London\");\n    capitalCities.put(\"Germany\", \"Berlin\");\n    \n    System.out.println(capitalCities.get(\"England\")); // Output: London\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "ArrayList Basics",
+      "code": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> animals = new ArrayList<>();\n        animals.add(\"Dog\");\n        animals.add(\"Cat\");\n        animals.add(\"Rabbit\");\n        \n        System.out.println(\"Original list: \" + animals);\n        \n        animals.set(1, \"Tiger\"); // Replace Cat with Tiger\n        animals.remove(2); // Remove Rabbit\n        \n        System.out.println(\"Updated list: \" + animals);\n        System.out.println(\"Total animals: \" + animals.size());\n    }\n}",
+      "output": "Original list: [Dog, Cat, Rabbit]\nUpdated list: [Dog, Tiger]\nTotal animals: 2"
+    },
+    {
+      "title": "HashSet (No Duplicates)",
+      "code": "import java.util.HashSet;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashSet<Integer> numbers = new HashSet<>();\n        numbers.add(4);\n        numbers.add(7);\n        numbers.add(4); // Duplicate\n        numbers.add(8);\n        numbers.add(7); // Duplicate\n        \n        System.out.println(\"Unique numbers: \" + numbers);\n        \n        if (numbers.contains(7)) {\n            System.out.println(\"The set contains the number 7.\");\n        }\n    }\n}",
+      "output": "Unique numbers: [4, 7, 8]\nThe set contains the number 7."
+    },
+    {
+      "title": "HashMap (Key-Value)",
+      "code": "import java.util.HashMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, Integer> people = new HashMap<>();\n        \n        // Add keys and values (Name, Age)\n        people.put(\"John\", 32);\n        people.put(\"Steve\", 30);\n        people.put(\"Angie\", 33);\n        \n        System.out.println(\"Steve's age: \" + people.get(\"Steve\"));\n        \n        System.out.println(\"\\nAll people in the map:\");\n        // Iterate through the keys\n        for (String i : people.keySet()) {\n            System.out.println(\"Name: \" + i + \" Age: \" + people.get(i));\n        }\n    }\n}",
+      "output": "Steve's age: 30\n\nAll people in the map:\nName: John Age: 32\nName: Steve Age: 30\nName: Angie Age: 33"
+    }
+  ],
+  "conclusion": "The Collections framework is one of the most powerful and frequently used parts of the Java API. While traditional arrays are useful for fixed-size lists, Lists, Sets, and Maps give you the flexibility to build complex, dynamic, and high-performance applications. Whenever you don't know exactly how many items you will need to store, reach for a Collection!"
+},
+ // ================= TOPIC: JAVA  ArrayList =============
+{
+  "id": "java-arraylist",
+  "title": "Java ArrayList",
+  "subjectCode": "java",
+  "intro": "While standard Java Arrays are incredibly fast, they have one major flaw: their size is fixed. If you create an array of 5 items, you can never add a 6th. This is where the 'ArrayList' comes in! An ArrayList is a resizable array found in the 'java.util' package. It automatically grows when you add elements and shrinks when you remove them, making it the go-to data structure for dynamic data.",
+  "sections": [
+    {
+      "heading": "1. Creating an ArrayList",
+      "content": [
+        {
+          "type": "text",
+          "value": "To use an ArrayList, you first need to import it from the 'java.util' package. Unlike standard arrays, you don't need to specify a size when creating it. One crucial rule: ArrayLists can only store Objects. If you want to store primitive types like 'int', 'double', or 'boolean', you must use their corresponding Wrapper classes ('Integer', 'Double', 'Boolean')."
+        },
+        {
+          "type": "code",
+          "value": "import java.util.ArrayList;\n\npublic class Main {\n  public static void main(String[] args) {\n    // Creating an ArrayList of Strings\n    ArrayList<String> cars = new ArrayList<String>();\n    \n    // Creating an ArrayList of Integers\n    ArrayList<Integer> ages = new ArrayList<Integer>();\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "2. Adding and Accessing Elements",
+      "content": [
+        {
+          "type": "text",
+          "value": "You add elements to the list using the 'add()' method. To retrieve an element, you use the 'get()' method along with its index. Just like standard arrays, ArrayList indexing starts at 0."
+        },
+        {
+          "type": "code",
+          "value": "ArrayList<String> cars = new ArrayList<String>();\ncars.add(\"Volvo\");\ncars.add(\"BMW\");\ncars.add(\"Ford\");\n\nSystem.out.println(cars.get(0)); // Output: Volvo"
+        }
+      ]
+    },
+    {
+      "heading": "3. Modifying and Removing Elements",
+      "content": [
+        {
+          "type": "text",
+          "value": "To change an existing element, use the 'set()' method and provide the index and the new value. To delete a specific element, use the 'remove()' method. If you want to wipe out the entire list at once, use the 'clear()' method."
+        },
+        {
+          "type": "code",
+          "value": "cars.set(0, \"Opel\"); // Changes the first item to Opel\ncars.remove(1);      // Removes the second item (BMW)\ncars.clear();        // Empties the entire ArrayList"
+        }
+      ]
+    },
+    {
+      "heading": "4. ArrayList vs Standard Array",
+      "content": [
+        {
+          "type": "text",
+          "value": "When should you use which? Here is a quick comparison to help you decide:"
+        },
+        {
+          "type": "table",
+          "headers": ["Feature", "Standard Array", "ArrayList"],
+          "rows": [
+            ["Size", "Fixed size", "Dynamic size (grows automatically)"],
+            ["Data Types", "Can hold primitives and Objects", "Can hold Objects only (Wrapper classes)"],
+            ["Performance", "Slightly faster", "Slightly slower due to resizing overhead"],
+            ["Length check", "Uses the 'length' attribute", "Uses the 'size()' method"]
+          ]
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "Basic Operations",
+      "code": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> tasks = new ArrayList<>();\n        \n        // Adding elements\n        tasks.add(\"Buy Groceries\");\n        tasks.add(\"Pay Bills\");\n        tasks.add(\"Walk the Dog\");\n        \n        System.out.println(\"To-Do List: \" + tasks);\n        System.out.println(\"Total tasks: \" + tasks.size());\n        \n        // Modifying and Removing\n        tasks.set(1, \"Pay Electricity Bill\");\n        tasks.remove(0);\n        \n        System.out.println(\"\\nUpdated List: \" + tasks);\n    }\n}",
+      "output": "To-Do List: [Buy Groceries, Pay Bills, Walk the Dog]\nTotal tasks: 3\n\nUpdated List: [Pay Electricity Bill, Walk the Dog]"
+    },
+    {
+      "title": "Looping Through",
+      "code": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> colors = new ArrayList<>();\n        colors.add(\"Red\");\n        colors.add(\"Green\");\n        colors.add(\"Blue\");\n        \n        System.out.println(\"--- Using standard for loop ---\");\n        for (int i = 0; i < colors.size(); i++) {\n            System.out.println(colors.get(i));\n        }\n        \n        System.out.println(\"\\n--- Using for-each loop ---\");\n        for (String color : colors) {\n            System.out.println(color);\n        }\n    }\n}",
+      "output": "--- Using standard for loop ---\nRed\nGreen\nBlue\n\n--- Using for-each loop ---\nRed\nGreen\nBlue"
+    },
+    {
+      "title": "Sorting an ArrayList",
+      "code": "import java.util.ArrayList;\nimport java.util.Collections; // Import the Collections class\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<Integer> scores = new ArrayList<>();\n        scores.add(85);\n        scores.add(99);\n        scores.add(72);\n        scores.add(91);\n        \n        System.out.println(\"Before sorting: \" + scores);\n        \n        // The Collections class provides a handy sort method\n        Collections.sort(scores);\n        \n        System.out.println(\"After sorting: \" + scores);\n    }\n}",
+      "output": "Before sorting: [85, 99, 72, 91]\nAfter sorting: [72, 85, 91, 99]"
+    }
+  ],
+  "conclusion": "The 'ArrayList' is arguably the most frequently used data structure in everyday Java development. It provides the perfect balance of speed and flexibility. Whenever you are building an application where the amount of data is unknown or changes frequently—like a shopping cart, a list of active users, or reading lines from a file—the ArrayList is your best friend."
+},
+// ================= TOPIC: JAVA  HashMap =============
+{
+  "id": "java-hashmap",
+  "title": "Java HashMap",
+  "subjectCode": "java",
+  "intro": "Imagine looking up a word in a physical dictionary. You don't read page by page from the beginning; you jump straight to the word (the key) to find its definition (the value). This is exactly how a Java 'HashMap' works! Found in the 'java.util' package, a HashMap stores items in key-value pairs. Because it uses a technique called 'hashing' under the hood, it provides lightning-fast data retrieval, making it perfect for connecting related pieces of information.",
+  "sections": [
+    {
+      "heading": "1. Creating a HashMap",
+      "content": [
+        {
+          "type": "text",
+          "value": "To use a HashMap, you must import it from the 'java.util' package. When creating one, you must specify two data types in the angle brackets: the first for the Key, and the second for the Value. Remember, just like ArrayLists, HashMaps can only store Objects, so you must use wrapper classes like 'Integer' instead of 'int'."
+        },
+        {
+          "type": "code",
+          "value": "import java.util.HashMap;\n\npublic class Main {\n  public static void main(String[] args) {\n    // Create a HashMap with String keys and Integer values\n    HashMap<String, Integer> userAges = new HashMap<String, Integer>();\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "2. Adding and Accessing Items",
+      "content": [
+        {
+          "type": "text",
+          "value": "Instead of using the 'add()' method like an ArrayList, you use the 'put()' method to insert a key-value pair. To retrieve a value, you use the 'get()' method and provide the key."
+        },
+        {
+          "type": "code",
+          "value": "HashMap<String, String> capitals = new HashMap<String, String>();\ncapitals.put(\"Japan\", \"Tokyo\");\ncapitals.put(\"France\", \"Paris\");\n\nSystem.out.println(capitals.get(\"Japan\")); // Output: Tokyo"
+        }
+      ]
+    },
+    {
+      "heading": "3. Common HashMap Methods",
+      "content": [
+        {
+          "type": "text",
+          "value": "The HashMap class provides several built-in methods to manage your key-value pairs efficiently:"
+        },
+        {
+          "type": "table",
+          "headers": ["Method", "Description", "Example Code"],
+          "rows": [
+            ["put(key, value)", "Adds a new key-value pair to the map.", "map.put(\"A\", 1);"],
+            ["get(key)", "Returns the value associated with the key.", "map.get(\"A\");"],
+            ["remove(key)", "Removes the pair associated with the key.", "map.remove(\"A\");"],
+            ["containsKey(key)", "Checks if the map contains the specified key (Returns boolean).", "map.containsKey(\"A\");"],
+            ["size()", "Returns the number of key-value pairs in the map.", "map.size();"],
+            ["clear()", "Removes all items from the map.", "map.clear();"]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "4. Looping Through a HashMap",
+      "content": [
+        {
+          "type": "text",
+          "value": "Looping through a HashMap is slightly different than an ArrayList because you have both keys and values. You can use the 'keySet()' method to get a list of all keys, or the 'values()' method to get a list of all values. A standard for-each loop is the easiest way to iterate through them."
+        },
+        {
+          "type": "code",
+          "value": "for (String i : capitals.keySet()) {\n  System.out.println(\"Country: \" + i + \" City: \" + capitals.get(i));\n}"
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "Basic HashMap",
+      "code": "import java.util.HashMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, String> emailBook = new HashMap<>();\n        \n        // Adding contacts\n        emailBook.put(\"Alice\", \"alice@example.com\");\n        emailBook.put(\"Bob\", \"bob@example.com\");\n        emailBook.put(\"Charlie\", \"charlie@example.com\");\n        \n        System.out.println(\"Bob's email is: \" + emailBook.get(\"Bob\"));\n        System.out.println(\"Total contacts: \" + emailBook.size());\n        \n        // Removing a contact\n        emailBook.remove(\"Alice\");\n        System.out.println(\"Contains Alice? \" + emailBook.containsKey(\"Alice\"));\n    }\n}",
+      "output": "Bob's email is: bob@example.com\nTotal contacts: 3\nContains Alice? false"
+    },
+    {
+      "title": "Iterating keys & values",
+      "code": "import java.util.HashMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, Integer> productPrices = new HashMap<>();\n        productPrices.put(\"Laptop\", 999);\n        productPrices.put(\"Mouse\", 25);\n        productPrices.put(\"Keyboard\", 45);\n        \n        System.out.println(\"--- Store Inventory ---\");\n        for (String product : productPrices.keySet()) {\n            int price = productPrices.get(product);\n            System.out.println(product + \": $\" + price);\n        }\n    }\n}",
+      "output": "--- Store Inventory ---\nMouse: $25\nKeyboard: $45\nLaptop: $999"
+    },
+    {
+      "title": "Overwriting Values",
+      "code": "import java.util.HashMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        HashMap<String, Integer> playerScores = new HashMap<>();\n        \n        // Initial score\n        playerScores.put(\"Player1\", 100);\n        System.out.println(\"Score: \" + playerScores.get(\"Player1\"));\n        \n        // If you put a new value using an existing key, it overwrites the old value!\n        playerScores.put(\"Player1\", 250);\n        System.out.println(\"Updated Score: \" + playerScores.get(\"Player1\"));\n    }\n}",
+      "output": "Score: 100\nUpdated Score: 250"
+    }
+  ],
+  "conclusion": "The 'HashMap' is a fundamental tool for any Java developer. Whenever you have data that naturally forms pairs—like a username and a password, a product and its price, or a word and its definition—the HashMap provides an elegant and highly optimized way to store, update, and search that data in a fraction of a second."
+},
+// ================= TOPIC: JAVA  Threads =============
+{
+  "id": "java-threads",
+  "title": "Java Threads",
+  "subjectCode": "java",
+  "intro": "Imagine playing a video game where you cannot walk and shoot at the same time because the computer can only process one action at once. That would be terrible! Java Threads solve this by allowing a program to perform multiple tasks simultaneously. A thread is the smallest unit of processing. By using multithreading, you can keep your applications highly responsive—like allowing a user to click buttons while a large file downloads in the background.",
+  "sections": [
+    {
+      "heading": "1. Two Ways to Create a Thread",
+      "content": [
+        {
+          "type": "text",
+          "value": "In Java, there are two primary ways to create a thread:<br/><br/><strong>1. Extending the <code>Thread</code> class:</strong> You create a new class that inherits from the <code>Thread</code> class and override its <code>run()</code> method.<br/><strong>2. Implementing the <code>Runnable</code> interface:</strong> You create a class that implements <code>Runnable</code> and its <code>run()</code> method, then pass an instance of it to a <code>Thread</code> object. This is generally preferred because Java only allows single inheritance; if you implement <code>Runnable</code>, your class can still extend another class!"
+        }
+      ]
+    },
+    {
+      "heading": "2. Extending the Thread Class",
+      "content": [
+        {
+          "type": "text",
+          "value": "When you extend the <code>Thread</code> class, the code that you want to run simultaneously goes inside the <code>run()</code> method. To actually begin execution, you create an object of your class and call the <strong><code>start()</code></strong> method. (Never call <code>run()</code> directly, as that will just execute on the main thread rather than creating a new one!)"
+        },
+        {
+          "type": "code",
+          "value": "public class MyThread extends Thread {\n  public void run() {\n    System.out.println(\"This code is running in a separate thread!\");\n  }\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    MyThread thread = new MyThread();\n    thread.start(); // Starts the thread\n    System.out.println(\"This code is running in the main thread.\");\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "3. Implementing the Runnable Interface",
+      "content": [
+        {
+          "type": "text",
+          "value": "If you choose to implement <code>Runnable</code>, you still write your concurrent code inside a <code>run()</code> method. However, to start it, you must wrap your Runnable object inside a standard <code>Thread</code> object."
+        },
+        {
+          "type": "code",
+          "value": "public class MyRunnable implements Runnable {\n  public void run() {\n    System.out.println(\"This code is running in a Runnable thread!\");\n  }\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    MyRunnable myRunnable = new MyRunnable();\n    Thread thread = new Thread(myRunnable);\n    thread.start();\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "4. Concurrency Problems",
+      "content": [
+        {
+          "type": "text",
+          "value": "While threads are powerful, they introduce a major risk: <strong>Concurrency Problems</strong>. If two threads try to modify the exact same variable at the exact same time, the result is unpredictable (often called a 'Race Condition'). To fix this, Java provides the <code>synchronized</code> keyword, which locks a method or variable so only one thread can access it at a time."
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "Extending Thread",
+      "code": "class HelloThread extends Thread {\n    public void run() {\n        System.out.println(\"Hello from a custom Thread!\");\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        HelloThread t1 = new HelloThread();\n        t1.start();\n        \n        System.out.println(\"Hello from the Main thread!\");\n    }\n}",
+      "output": "Hello from the Main thread!\nHello from a custom Thread!"
+    },
+    {
+      "title": "Runnable Interface",
+      "code": "class Task implements Runnable {\n    public void run() {\n        for(int i = 1; i <= 3; i++) {\n            System.out.println(\"Task running: Step \" + i);\n        }\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Task myTask = new Task();\n        Thread t1 = new Thread(myTask);\n        \n        t1.start();\n        System.out.println(\"Main thread finished initiating task.\");\n    }\n}",
+      "output": "Main thread finished initiating task.\nTask running: Step 1\nTask running: Step 2\nTask running: Step 3"
+    },
+    {
+      "title": "Thread Sleep",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Starting countdown...\");\n        \n        try {\n            for (int i = 3; i > 0; i--) {\n                System.out.println(i);\n                // Pauses the main thread for 1000 milliseconds (1 second)\n                Thread.sleep(1000);\n            }\n        } catch (InterruptedException e) {\n            System.out.println(\"Thread was interrupted!\");\n        }\n        \n        System.out.println(\"Liftoff! \");\n    }\n}",
+      "output": "Starting countdown...\n3\n2\n1\nLiftoff! "
+    }
+  ],
+  "conclusion": "Threads are the secret behind modern, high-performance applications, enabling background processes, smooth user interfaces, and complex server request handling. While they add power, they also demand responsibility; learning to manage shared resources and prevent race conditions is a critical skill for any advanced Java developer."
+},
+// ================= TOPIC: JAVA  Lambda Expressions =============
+{
+  "id": "java-lambda-expressions",
+  "title": "Java Lambda Expressions",
+  "subjectCode": "java",
+  "intro": "Imagine having to write an entire class just to pass a single, simple instruction (like 'print this word') to a button. Before Java 8, developers had to use clunky 'anonymous classes' to achieve this. Java Lambda Expressions changed the game! A lambda expression is a short, concise block of code that takes in parameters and returns a value. It allows you to treat your code as data, bringing functional programming concepts to Java.",
+  "sections": [
+    {
+      "heading": "1. Lambda Syntax",
+      "content": [
+        {
+          "type": "text",
+          "value": "The simplest way to think of a Lambda expression is an anonymous method (a method without a name). The syntax uses the arrow token <code>-></code> to separate the parameters from the body."
+        },
+        {
+          "type": "list",
+          "items": [
+            "No parameters: <code>() -> System.out.println(\"Hello\");</code>",
+            "One parameter: <code>(name) -> System.out.println(\"Hello \" + name);</code>",
+            "Multiple parameters: <code>(a, b) -> { return a + b; }</code>"
+          ]
+        },
+        {
+          "type": "text",
+          "value": "Notice that if the body has only one line, you can skip the curly braces <code>{}</code> and the <code>return</code> keyword!"
+        }
+      ]
+    },
+    {
+      "heading": "2. Using Lambdas with Collections",
+      "content": [
+        {
+          "type": "text",
+          "value": "One of the most common and powerful places to use Lambda expressions is with Java Collections, like an ArrayList. The <code>forEach()</code> method accepts a Lambda expression and automatically applies it to every item in the list."
+        },
+        {
+          "type": "code",
+          "value": "import java.util.ArrayList;\n\npublic class Main {\n  public static void main(String[] args) {\n    ArrayList<Integer> numbers = new ArrayList<Integer>();\n    numbers.add(5);\n    numbers.add(9);\n    numbers.add(8);\n    \n    // Using a Lambda expression to print each item\n    numbers.forEach( (n) -> { System.out.println(n); } );\n  }\n}"
+        }
+      ]
+    },
+    {
+      "heading": "3. Functional Interfaces",
+      "content": [
+        {
+          "type": "text",
+          "value": "Under the hood, Lambda expressions are inextricably tied to <strong>Functional Interfaces</strong>. A Functional Interface is simply any interface that has exactly ONE abstract method (like <code>Runnable</code>). When you write a Lambda, Java automatically maps your short code block to that single abstract method."
+        },
+        {
+          "type": "code",
+          "value": "interface StringFunction {\n  String run(String str);\n}\n\npublic class Main {\n  public static void main(String[] args) {\n    // The lambda provides the implementation for the 'run' method!\n    StringFunction exclaim = (s) -> s + \"!\";\n    \n    System.out.println(exclaim.run(\"Hello\")); // Output: Hello!\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "playground": [
+    {
+      "title": "ArrayList forEach",
+      "code": "import java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<String> names = new ArrayList<>();\n        names.add(\"Alice\");\n        names.add(\"Bob\");\n        names.add(\"Charlie\");\n        \n        // The old way (for-each loop):\n        // for(String name : names) { System.out.println(name); }\n        \n        // The modern Lambda way:\n        System.out.println(\"Using Lambda:\");\n        names.forEach( name -> System.out.println(\"Hi, \" + name) );\n    }\n}",
+      "output": "Using Lambda:\nHi, Alice\nHi, Bob\nHi, Charlie"
+    },
+    {
+      "title": "Custom Functional Interface",
+      "code": "// Interface with exactly ONE method\ninterface MathOperation {\n    int operate(int a, int b);\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        // Lambda for addition\n        MathOperation addition = (a, b) -> a + b;\n        \n        // Lambda for multiplication\n        MathOperation multiplication = (a, b) -> a * b;\n        \n        System.out.println(\"10 + 5 = \" + addition.operate(10, 5));\n        System.out.println(\"10 * 5 = \" + multiplication.operate(10, 5));\n    }\n}",
+      "output": "10 + 5 = 15\n10 * 5 = 50"
+    }
+  ],
+  "conclusion": "Lambda Expressions represent a massive leap forward in Java's evolution. By dramatically reducing boilerplate code and enabling functional programming paradigms, they make your code cleaner, more readable, and easier to maintain. Once you master Lambdas, you will be perfectly positioned to learn the highly powerful Java Streams API!"
+}
   ],
 };
