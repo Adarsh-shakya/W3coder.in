@@ -26,6 +26,7 @@
 // JavaScript DOM Manipulation & Events
 // JavaScript Higher-Order Functions (map, filter, reduce)
 // JavaScript Destructuring & Rest/Spread Operators
+
 export const javascriptData = {
   subjectTitle: "JavaScript",
   subjectCode: "javascript", 
@@ -2419,7 +2420,7 @@ console.log(counter.count);       // undefined (private!)`,
       conclusion:
         "Scope governs variable visibility across global, function, and block boundaries, while lexical scoping dictates identifier resolution along the scope chain. Closures allow inner functions to retain access to their defining lexical environment, making them an indispensable pattern for data privacy, state retention, factory functions, and higher-order functional programming.",
     },
-    // ================= TOPIC 15: JAVASCRIPT ENCAPSULATION (PRIVATE FIELDS #) =================
+    // ================= TOPIC 15: JAVASCRIPT ENCAPSULATION  =================
     {
       id: "javascript-encapsulation",
       title: "JavaScript Encapsulation",
