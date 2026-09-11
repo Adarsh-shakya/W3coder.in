@@ -170,6 +170,23 @@ if (item.type === "image") {
   );
 }
 
+if (item.type === "output") {
+    return (
+      <div 
+        key={index} 
+        className="output-preview-box"
+        style={{
+          border: "1px dashed #94a3b8",
+          padding: "16px",
+          borderRadius: "8px",
+          backgroundColor: "#f8fafc",
+          margin: "12px 0"
+        }}
+        dangerouslySetInnerHTML={{ __html: item.value }}
+      />
+    );
+  }
+
                 // TYPE: TABLE (NEW - For Python Strings Cheat Sheet)
               // TYPE: TABLE (SIMPLE GRID FORMAT)
                 if (item.type === "table") {
