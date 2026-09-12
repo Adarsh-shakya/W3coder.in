@@ -1,6 +1,6 @@
-const fs = require('fs');
-const { SitemapStream, streamToPromise } = require('sitemap');
-const { Readable } = require('stream');
+import fs from 'fs';
+import { SitemapStream, streamToPromise } from 'sitemap';
+import { Readable } from 'stream';
 
 async function generateSitemap() {
   // List all your React routes here
