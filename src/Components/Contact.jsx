@@ -43,8 +43,8 @@ const Contact = () => {
           <div className="contact-card">
             <div className="icon-box"><FaMapMarkerAlt /></div>
             <h3>Visit Us</h3>
-            <p>Kasganj, Uttar Pradesh</p>
-            <p>India - 207123</p>
+            <p>Noida, Uttar Pradesh</p>
+            <p>India - 201305</p>
           </div>
 
         </div>

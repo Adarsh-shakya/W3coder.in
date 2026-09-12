@@ -48,9 +48,9 @@ const Footer = () => {
             <strong>Email :</strong> w3coder.official@gmail.com
           </p>
           <p>
-            <strong>Address :</strong> Kasganj, Uttar Pradesh
+            <strong>Address :</strong> Noida, Uttar Pradesh
             <br />
-            India - 207246
+            India - 201305
           </p>
           <div className="socials">
             <a
@@ -94,7 +94,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>Built with ❤️ by Adarsh Shakya</p>
+        <p>Developed by W3Coder</p>
       </div>
     </footer>
   );
