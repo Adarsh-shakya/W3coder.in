@@ -21,7 +21,6 @@
 // python List Comprehension         
 // python Dictionary Comprehension   
 // python OOP
-import python_img from "../assets/images/python.webp";
 
 export const pythonData = {
   subjectTitle: "Python ",
@@ -41,7 +40,7 @@ export const pythonData = {
           content: [
             {
               type: "image",
-              url: python_img, // <-- Yahan apna image path daal dijiyega
+              url: "images/python.webp", // <-- Yahan apna image path daal dijiyega
               alt: "Python Programming Language",
               className: "responsive-image"
             }

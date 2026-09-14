@@ -28,11 +28,7 @@
 // java Threads
 // java Lambda Expressions
 
-import java_Img from "../assets/images/java_img.webp";
 
-import DataType from "../assets/images/DataType.webp";
-import controlFlow_img from "../assets/images/controFlow_img.webp";
-import Input_img from "../assets/images/Input_Img.webp";
 
 export const javaData = {
   subjectTitle: "Java programming",
@@ -51,7 +47,7 @@ export const javaData = {
           content: [
             {
               type: "image",
-              url: java_Img, // <-- Insert your Java image path here
+              url: "images/java_img.webp", // <-- Insert your Java image path here
               alt: "Java Programming Language",
               className: "responsive-image"
             }
@@ -286,7 +282,7 @@ export const javaData = {
         },
         {
           type: "image",
-          url: controlFlow_img, 
+          url: "images/controFlow_img.webp", 
           alt: "Java Flow Control Diagram",
           className: "responsive-image"
         }
@@ -668,7 +664,7 @@ System.out.println(name);
         },
         {
           type: "image",
-          url: DataType, // Change this to your actual image URL
+          url: "images/DataType.webp", // Change this to your actual image URL
           alt: "Java Data Types Classification",
           className: "responsive-image"
         }
@@ -835,7 +831,7 @@ System.out.println(name);
       content: [
         {
           type: "image",
-          url: Input_img, 
+          url: "images/Input_Img.webp", 
           alt: "Java Input Methods Diagram",
           className: "responsive-image"
         },

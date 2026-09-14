@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import heroImg from "../assets/images/coding.webp";
+
 import "../Styles/Home.css";
 import SEO from "../SEO.jsx";
 
@@ -42,7 +42,7 @@ const Home = () => {
           </div>
         </div>
         <div className="hero-image-wrapper">
-          <img src={heroImg} alt="Learn to code at w3coder.in" className="floating-img" />
+          <img src="/images/coding.webp" alt="Learn to code at w3coder.in" className="floating-img" />
           {/* A sleek background glow for the image */}
           <div className="img-glow"></div>
         </div>
