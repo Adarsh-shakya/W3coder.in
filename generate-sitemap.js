@@ -6,7 +6,7 @@ import { Readable } from 'stream';
 // 1. Apne saare subjects ki data files yahan import kar lein
 import { javaData } from './src/data/javaData.js';
 import { pythonData } from './src/data/pythonData.js'; 
-import { jsData } from './src/data/javascriptData.js';         
+import { javascriptData } from './src/data/javascriptData.js';         
 import { htmlData } from './src/data/htmlData.js';     
 import { cssData } from './src/data/cssData.js';       
 
@@ -25,7 +25,7 @@ async function generateSitemap() {
   const allSubjects = [
     javaData,
     pythonData, 
-    jsData, 
+    javascriptData, 
     htmlData, 
     cssData
   ];
