@@ -4569,7 +4569,5 @@ console.log(tallyScores("Coders", 25, 30, 45)); // "Coders: 100 points"`,
       conclusion:
         "Destructuring and the Rest/Spread operators form the backbone of modern, idiomatic JavaScript. By unpacking properties declaratively, combining data structures without mutation, and condensing variable argument lists cleanly, they make application code concise, predictable, and maintainable.",
     }
-
-
   ]
 };

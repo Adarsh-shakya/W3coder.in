@@ -1673,7 +1673,24 @@ export const pythonData = {
         },
         {
           title: "Inheritance",
-          code: `# Parent Class\nclass Employee:\n    def __init__(self, name, salary):\n        self.name = name\n        self.salary = salary\n\n# Child Class\nclass Developer(Employee):\n    def __init__(self, name, salary, language):\n        super().__init__(name, salary) # Call parent constructor\n        self.language = language\n\n    def show(self):\n        print(f"{self.name} codes in {self.language} and earns ${self.salary}")\n\ndev = Developer("Adarsh", 80000, "Python")\ndev.show()`,
+         code: `\
+# Parent Class
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+# Child Class
+class Developer(Employee):
+    def __init__(self, name, salary, language):
+        super().__init__(name, salary) # Call parent constructor
+        self.language = language
+
+    def show(self):
+        print(f"\${self.name} codes in \${self.language} and earns \${self.salary}")
+
+dev = Developer("Adarsh", 80000, "Python")
+dev.show()`,
           output: "Adarsh codes in Python and earns $80000"
         },
         {
