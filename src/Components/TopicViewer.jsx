@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism, vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Terminal, Play } from "lucide-react"; 
+import {
+  prism,
+  vscDarkPlus,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Terminal, Play } from "lucide-react";
 import "../Styles/Notes.css";
 
 const TopicViewer = ({ topicData }) => {
@@ -10,14 +13,18 @@ const TopicViewer = ({ topicData }) => {
   // STATE MANAGEMENT FOR PLAYGROUND
   // ==========================================
   const [activeTab, setActiveTab] = useState(0);
-  const [terminalOutput, setTerminalOutput] = useState('Click "Run Code" to see the output...');
+  const [terminalOutput, setTerminalOutput] = useState(
+    'Click "Run Code" to see the output...',
+  );
   const [isTyping, setIsTyping] = useState(false);
   const [hasRun, setHasRun] = useState(false);
   const [showCursor, setShowCursor] = useState(false);
 
   // Safety Check: Agar data load nahi hua
   if (!topicData) {
-    return <div className="note-container error-msg">Loading topic data...</div>;
+    return (
+      <div className="note-container error-msg">Loading topic data...</div>
+    );
   }
 
   // ==========================================
@@ -25,13 +32,13 @@ const TopicViewer = ({ topicData }) => {
   // ==========================================
   const runCode = () => {
     if (isTyping || !topicData.playground) return;
-    
+
     const targetText = topicData.playground[activeTab].output;
-    setTerminalOutput('');
+    setTerminalOutput("");
     setIsTyping(true);
     setHasRun(true);
     setShowCursor(true);
-    
+
     let i = 0;
     const typeWriter = () => {
       if (i < targetText.length) {
@@ -68,13 +75,36 @@ const TopicViewer = ({ topicData }) => {
               : topicData.title
           }
         />
+        {/* 👇 Bas yeh nayi lines add kar dein 👇 */}
+        <link
+          rel="canonical"
+          href={`https://w3coder.in/${topicData.subjectCode}/${topicData.id}`}
+        />
+
+        {/* Social Media Share (WhatsApp, Facebook) ke liye */}
+        <meta
+          property="og:title"
+          content={`${topicData.title} - W3Coder Tutorial`}
+        />
+        <meta
+          property="og:description"
+          content={
+            topicData.intro
+              ? topicData.intro.substring(0, 160)
+              : topicData.title
+          }
+        />
+        <meta
+          property="og:url"
+          content={`https://w3coder.in/${topicData.subjectCode}/${topicData.id}`}
+        />
+        <meta property="og:type" content="article" />
       </Helmet>
 
       {/* ========================================== */}
       {/* MAIN TOPIC CONTENT                         */}
       {/* ========================================== */}
       <div className="note-container">
-        
         {/* 1. Main Topic Title & Intro */}
         <h1 className="note-title">{topicData.title}</h1>
         {topicData.intro && <p className="note-text">{topicData.intro}</p>}
@@ -86,7 +116,6 @@ const TopicViewer = ({ topicData }) => {
               <h2 className="note-heading">{section.heading}</h2>
 
               {section.content.map((item, i) => {
-                
                 // TYPE: NORMAL TEXT
                 if (item.type === "text") {
                   return (
@@ -101,7 +130,11 @@ const TopicViewer = ({ topicData }) => {
                 // TYPE: NORMAL LIST
                 if (item.type === "list") {
                   return (
-                    <ul key={i} className="note-text" style={{ paddingLeft: "1.5rem", listStyleType: "disc" }}>
+                    <ul
+                      key={i}
+                      className="note-text"
+                      style={{ paddingLeft: "1.5rem", listStyleType: "disc" }}
+                    >
                       {item.items.map((li, k) => (
                         <li key={k}>{li}</li>
                       ))}
@@ -112,7 +145,15 @@ const TopicViewer = ({ topicData }) => {
                 // TYPE: HTML LIST (strong, span etc.)
                 if (item.type === "list-html") {
                   return (
-                    <ul key={i} className="note-text" style={{ paddingLeft: "1.5rem", listStyleType: "disc", lineHeight: "1.8" }}>
+                    <ul
+                      key={i}
+                      className="note-text"
+                      style={{
+                        paddingLeft: "1.5rem",
+                        listStyleType: "disc",
+                        lineHeight: "1.8",
+                      }}
+                    >
                       {item.items.map((li, k) => (
                         <li key={k} dangerouslySetInnerHTML={{ __html: li }} />
                       ))}
@@ -142,16 +183,40 @@ const TopicViewer = ({ topicData }) => {
                 if (item.type === "block") {
                   return (
                     <div key={i} className="content-block">
-                      {item.subheading && <h3 className="note-subheading">{item.subheading}</h3>}
+                      {item.subheading && (
+                        <h3 className="note-subheading">{item.subheading}</h3>
+                      )}
                       {item.text && <p className="note-text">{item.text}</p>}
                       {item.code && (
-                        <pre className="note-code" style={{ backgroundColor: "#ECEFF4", padding: "1rem", borderLeft: "4px solid #3b82f6", overflowX: "auto", borderRadius: "4px" }}>
+                        <pre
+                          className="note-code"
+                          style={{
+                            backgroundColor: "#ECEFF4",
+                            padding: "1rem",
+                            borderLeft: "4px solid #3b82f6",
+                            overflowX: "auto",
+                            borderRadius: "4px",
+                          }}
+                        >
                           {item.code}
                         </pre>
                       )}
-                      {item.exampleTitle && <p className="note-example-title">{item.exampleTitle}</p>}
+                      {item.exampleTitle && (
+                        <p className="note-example-title">
+                          {item.exampleTitle}
+                        </p>
+                      )}
                       {item.exampleCode && (
-                        <pre className="note-code" style={{ backgroundColor: "#ECEFF4", padding: "1rem", borderLeft: "4px solid #3b82f6", overflowX: "auto", borderRadius: "4px" }}>
+                        <pre
+                          className="note-code"
+                          style={{
+                            backgroundColor: "#ECEFF4",
+                            padding: "1rem",
+                            borderLeft: "4px solid #3b82f6",
+                            overflowX: "auto",
+                            borderRadius: "4px",
+                          }}
+                        >
                           {item.exampleCode}
                         </pre>
                       )}
@@ -159,36 +224,36 @@ const TopicViewer = ({ topicData }) => {
                   );
                 }
                 // TYPE: IMAGE
-if (item.type === "image") {
-  return (
-    <img 
-      key={i} 
-      src={item.url} 
-      alt={item.alt || "Tutorial Image"} 
-      className={item.className || "responsive-image"} 
-    />
-  );
-}
+                if (item.type === "image") {
+                  return (
+                    <img
+                      key={i}
+                      src={item.url}
+                      alt={item.alt || "Tutorial Image"}
+                      className={item.className || "responsive-image"}
+                    />
+                  );
+                }
 
-if (item.type === "output") {
-    return (
-      <div 
-        key={index} 
-        className="output-preview-box"
-        style={{
-          border: "1px dashed #94a3b8",
-          padding: "16px",
-          borderRadius: "8px",
-          backgroundColor: "#f8fafc",
-          margin: "12px 0"
-        }}
-        dangerouslySetInnerHTML={{ __html: item.value }}
-      />
-    );
-  }
+                if (item.type === "output") {
+                  return (
+                    <div
+                      key={index}
+                      className="output-preview-box"
+                      style={{
+                        border: "1px dashed #94a3b8",
+                        padding: "16px",
+                        borderRadius: "8px",
+                        backgroundColor: "#f8fafc",
+                        margin: "12px 0",
+                      }}
+                      dangerouslySetInnerHTML={{ __html: item.value }}
+                    />
+                  );
+                }
 
                 // TYPE: TABLE (NEW - For Python Strings Cheat Sheet)
-              // TYPE: TABLE (SIMPLE GRID FORMAT)
+                // TYPE: TABLE (SIMPLE GRID FORMAT)
                 if (item.type === "table") {
                   return (
                     <div key={i} className="note-table-container">
@@ -236,7 +301,7 @@ if (item.type === "output") {
                 <button
                   key={index}
                   onClick={() => handleTabChange(index)}
-                  className={`playground-tab ${activeTab === index ? 'active' : ''}`}
+                  className={`playground-tab ${activeTab === index ? "active" : ""}`}
                 >
                   {tab.title}
                 </button>
@@ -245,7 +310,7 @@ if (item.type === "output") {
 
             {/* Editor Area (Dark Theme) */}
             <div className="playground-code-area">
-              <button 
+              <button
                 onClick={runCode}
                 disabled={isTyping}
                 className="playground-run-btn"
@@ -253,14 +318,19 @@ if (item.type === "output") {
                 <Play />
                 <span>Run</span>
               </button>
-              
+
               <div style={{ paddingTop: "1.5rem" }}>
                 <SyntaxHighlighter
-                   language={topicData.subjectCode || "python"}
-                   style={vscDarkPlus}
-                   customStyle={{ margin: 0, borderRadius: "6px", fontSize: "14px", background: "#1e293b" }}
+                  language={topicData.subjectCode || "python"}
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    borderRadius: "6px",
+                    fontSize: "14px",
+                    background: "#1e293b",
+                  }}
                 >
-                   {topicData.playground[activeTab].code}
+                  {topicData.playground[activeTab].code}
                 </SyntaxHighlighter>
               </div>
             </div>
@@ -270,7 +340,9 @@ if (item.type === "output") {
               <div className="playground-output-header">
                 <Terminal /> Terminal Output
               </div>
-              <div className={`playground-output-text ${hasRun ? 'has-run' : ''}`}>
+              <div
+                className={`playground-output-text ${hasRun ? "has-run" : ""}`}
+              >
                 {terminalOutput}
                 {showCursor && <span className="blinking-cursor">█</span>}
               </div>
@@ -284,14 +356,20 @@ if (item.type === "output") {
         {/* 4. CONCLUSION                              */}
         {/* ========================================== */}
         {topicData.conclusion && (
-          <div className="content-block" style={{ marginTop: "2rem", backgroundColor: "#eff6ff", border: "1px solid #bfdbfe" }}>
+          <div
+            className="content-block"
+            style={{
+              marginTop: "2rem",
+              backgroundColor: "#eff6ff",
+              border: "1px solid #bfdbfe",
+            }}
+          >
             <h2 className="note-heading" style={{ marginTop: 0 }}>
               Conclusion
             </h2>
             <p className="note-text">{topicData.conclusion}</p>
           </div>
         )}
-
       </div>
     </>
   );

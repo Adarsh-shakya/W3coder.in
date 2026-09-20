@@ -5,6 +5,7 @@ import { useParams, Navigate } from "react-router-dom";
 import TopicViewer from "../Components/TopicViewer";
 import Sidebar from "../Components/Sidebar";
 import Rightbar from "../Components/Rightbar";
+import NotFound from "./NotFound";
 
 // Data
 import { javaData } from "../data/javaData";
@@ -28,7 +29,7 @@ const CoursePage = ({ isSidebarOpen, setSidebarOpen }) => {
 
   const currentSubjectData = dataMap[subject];
   if (!currentSubjectData) {
-    return <div className="error-msg">Subject Not Found (404)</div>;
+   return <NotFound />;
   }
 
   if (!topic) {
@@ -40,7 +41,7 @@ const CoursePage = ({ isSidebarOpen, setSidebarOpen }) => {
     (t) => t.id === topic,
   );
   if (!currentTopicData) {
-    return <div className="error-msg">Topic Not Found inside {subject}</div>;
+     return <NotFound />;
   }
 
   return (

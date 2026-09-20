@@ -8,6 +8,7 @@ import Footer from "./Components/Footer.jsx";
 
 // Pages
 import Home from "./Pages/Home.jsx";
+import NotFound from "./Pages/NotFound.jsx";
 import CoursePage from "./Pages/CoursePage.jsx";
 
 import PrivacyPolicy from "./Components/PrivacyPolicy.jsx";
@@ -53,10 +54,7 @@ const App = () => {
               }
             />
 
-            <Route
-              path="*"
-              element={<div style={{ padding: "50px" }}>Page Not Found</div>}
-            />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
