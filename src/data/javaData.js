@@ -47,7 +47,7 @@ export const javaData = {
           content: [
             {
               type: "image",
-              url: "images/java_img.webp", // <-- Insert your Java image path here
+              url: "/images/java_img.webp", // <-- Insert your Java image path here
               alt: "Java Programming Language",
               className: "responsive-image"
             }
@@ -263,7 +263,8 @@ export const javaData = {
       conclusion: "Congratulations! With the JDK installed and IntelliJ IDEA set up, your computer is now a powerful development machine ready to write and execute enterprise-grade Java applications.",
     },
     // ================= TOPIC 2: JAVA FLOW CONTROL  =========
-     {
+
+{
   id: "java-flow-control",
   title: "Java Flow Control",
   subjectCode: "java",
@@ -282,7 +283,7 @@ export const javaData = {
         },
         {
           type: "image",
-          url: "images/controFlow_img.webp", 
+          url: "/images/controFlow_img.webp", 
           alt: "Java Flow Control Diagram",
           className: "responsive-image"
         }
@@ -664,7 +665,7 @@ System.out.println(name);
         },
         {
           type: "image",
-          url: "images/DataType.webp", // Change this to your actual image URL
+          url: "/images/DataType.webp", // Change this to your actual image URL
           alt: "Java Data Types Classification",
           className: "responsive-image"
         }
@@ -831,7 +832,7 @@ System.out.println(name);
       content: [
         {
           type: "image",
-          url: "images/Input_Img.webp", 
+          url: "/images/Input_Img.webp", 
           alt: "Java Input Methods Diagram",
           className: "responsive-image"
         },
@@ -2605,7 +2606,7 @@ public class Main {
       ],
       conclusion: "Inheritance allows developers to build structured hierarchies of classes. By writing core features in superclasses and specializing behavior in child classes, you eliminate code duplication and create extensible, highly organized software architectures."
     },
-  // ================= TOPIC: JAVA Polymorphism ==============
+    // ================= TOPIC: JAVA Polymorphism ==============
     {
       id: "java-polymorphism",
       title: "Java Polymorphism",

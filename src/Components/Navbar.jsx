@@ -21,7 +21,7 @@ const Navbar = ({ onToggleMenu }) => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-          <img src="images/logo.webp" alt="w3coder.in"  className="logo"/>
+          <img src="/images/logo.webp" alt="w3coder.in"  className="logo"/>
            
           </Link>
         </div>

@@ -40,7 +40,7 @@ export const pythonData = {
           content: [
             {
               type: "image",
-              url: "images/python.webp", // <-- Yahan apna image path daal dijiyega
+              url: "/images/python.webp", // <-- Yahan apna image path daal dijiyega
               alt: "Python Programming Language",
               className: "responsive-image"
             }
