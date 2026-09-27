@@ -1710,7 +1710,623 @@ dev.show()`,
         }
       ],
       conclusion: "OOP makes programming more structured and powerful. By mastering Classes, Objects, and the four pillars (Encapsulation, Inheritance, Polymorphism, and Abstraction), you can build scalable, secure, and maintainable real-world applications.",
+    },
+// ================= TOPIC 19: PYTHON 100 CODING QUESTIONS (1-5) =================
+{
+  id: "python-100-questions",
+  subjectCode: "python",
+  title: "Python 100 Coding Questions Lab",
+  intro: "Welcome to the ultimate Python coding lab! By completing this curated list of 100 questions, you will transition from a beginner writing basic syntax to a confident developer with rock-solid algorithmic logic.",
+  
+  sections: [
+    {
+      content: [
+        { type: "text", value: "1. Write a Python program to display a standard greeting message on the screen." },
+        { type: "code", value: 'print("Hello, World!")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "2. Write a program to take two numbers and perform basic arithmetic operations (addition, subtraction, multiplication, and division)." },
+        { type: "code", value: 'a = 10\nb = 5\nprint("Addition:", a + b)\nprint("Subtraction:", a - b)\nprint("Multiplication:", a * b)\nprint("Division:", a / b)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "3. Write a program to calculate the area of a circle with a given radius using the formula Area = π * r²." },
+        { type: "code", value: 'import math\nradius = 7\narea = math.pi * (radius ** 2)\nprint(f"Area of circle: {area:.2f}")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "4. Write a program to swap two variable values without using a temporary third variable." },
+        { type: "code", value: 'x = 5\ny = 10\nx, y = y, x\nprint(f"After swap: x = {x}, y = {y}")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "5. Write a program to verify whether a given integer is even or odd using conditional branching." },
+        { type: "code", value: 'num = 14\nif num % 2 == 0:\n    print(f"{num} is Even")\nelse:\n    print(f"{num} is Odd")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "6. Write a program to compare two numbers input by the user and print the greater number." },
+        { type: "code", value: 'num1 = 25\nnum2 = 40\nif num1 > num2:\n    print(f"{num1} is greater")\nelse:\n    print(f"{num2} is greater")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "7. Write a program to check whether a given number is positive, negative, or zero." },
+        { type: "code", value: 'num = -5\nif num > 0:\n    print("Positive Number")\nelif num < 0:\n    print("Negative Number")\nelse:\n    print("Zero")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "8. Write a program to calculate the factorial of a given positive integer using a loop." },
+        { type: "code", value: 'num = 5\nfactorial = 1\nfor i in range(1, num + 1):\n    factorial *= i\nprint(f"The factorial of {num} is {factorial}")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "9. Write a program to print the mathematical multiplication table for any given number up to 10." },
+        { type: "code", value: 'num = 7\nfor i in range(1, 11):\n    print(f"{num} x {i} = {num * i}")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "10. Write a program to check whether a given integer is a prime number or not." },
+        { type: "code", value: 'num = 11\nis_prime = True\nif num > 1:\n    for i in range(2, int(num**0.5) + 1):\n        if num % i == 0:\n            is_prime = False\n            break\nelse:\n    is_prime = False\nif is_prime:\n    print(f"{num} is a Prime Number")\nelse:\n    print(f"{num} is not a Prime Number")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "11. Write a program to find and list all prime numbers within a given range." },
+        { type: "code", value: 'start = 10\nend = 50\nprimes = []\nfor num in range(start, end + 1):\n    if num > 1:\n        for i in range(2, int(num**0.5) + 1):\n            if num % i == 0:\n                break\n        else:\n            primes.append(num)\nprint("Prime numbers:", primes)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "12. Write a program to generate the Fibonacci series up to n terms." },
+        { type: "code", value: 'n = 10\na, b = 0, 1\nfib = []\nfor _ in range(n):\n    fib.append(a)\n    a, b = b, a + b\nprint("Fibonacci series:", fib)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "13. Write a program to reverse the digits of a given integer." },
+        { type: "code", value: 'num = 12345\nrev = int(str(num)[::-1])\nprint("Reversed number:", rev)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "14. Write a program to check if a number is a palindrome." },
+        { type: "code", value: 'num = 121\norig = str(num)\nif orig == orig[::-1]:\n    print(f"{num} is a palindrome")\nelse:\n    print(f"{num} is not a palindrome")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "15. Write a program to check if a number is an Armstrong number." },
+        { type: "code", value: 'num = 153\nsum_val = sum(int(digit)**3 for digit in str(num))\nif sum_val == num:\n    print(f"{num} is an Armstrong number")\nelse:\n    print(f"{num} is not an Armstrong number")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "16. Write a program to find the sum of individual digits of a number." },
+        { type: "code", value: 'num = 456\ndigit_sum = sum(int(d) for d in str(num))\nprint("Sum of digits:", digit_sum)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "17. Write a program to calculate the power of a number without using built-in exponent operators." },
+        { type: "code", value: 'base, exp = 2, 3\nresult = 1\nfor _ in range(exp):\n    result *= base\nprint("Result:", result)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "18. Write a program to find the GCD and LCM of two numbers." },
+        { type: "code", value: 'import math\na, b = 24, 36\ngcd = math.gcd(a, b)\nlcm = (a * b) // gcd\nprint(f"GCD: {gcd}, LCM: {lcm}")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "19. Write a program to check whether a given year is a leap year." },
+        { type: "code", value: 'year = 2024\nif (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):\n    print(f"{year} is a leap year")\nelse:\n    print(f"{year} is not a leap year")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "20. Write a program to check whether an entered character is a vowel or a consonant." },
+        { type: "code", value: 'char = "e"\nif char.lower() in "aeiou":\n    print(f"{char} is a vowel")\nelse:\n    print(f"{char} is a consonant")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "21. Write a menu-driven calculator program using conditional branching." },
+        { type: "code", value: 'choice = "+"\na, b = 10, 5\nif choice == "+":\n    print(a + b)\nelif choice == "-":\n    print(a - b)\nelif choice == "*":\n    print(a * b)\nelif choice == "/":\n    print(a / b)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "22. Write a program to find the roots of a quadratic equation." },
+        { type: "code", value: 'import cmath\na, b, c = 1, 5, 6\nd = (b**2) - (4*a*c)\nsol1 = (-b - cmath.sqrt(d)) / (2*a)\nsol2 = (-b + cmath.sqrt(d)) / (2*a)\nprint(f"Roots are {sol1} and {sol2}")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "23. Write a program to calculate the minimum number of currency notes required for an ATM withdrawal." },
+        { type: "code", value: 'amount = 5600\nnotes = [2000, 500, 200, 100]\nfor note in notes:\n    count = amount // note\n    amount %= note\n    print(f"{note} : {count}")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "24. Write a program to find the smallest and largest numbers in a list." },
+        { type: "code", value: 'lst = [12, 45, 2, 89, 23]\nprint("Smallest:", min(lst))\nprint("Largest:", max(lst))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "25. Write a program to swap the first and last elements of a list." },
+        { type: "code", value: 'lst = [10, 20, 30, 40]\nlst[0], lst[-1] = lst[-1], lst[0]\nprint("Modified list:", lst)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "26. Write a program to sort a list in reverse order." },
+        { type: "code", value: 'lst = [5, 2, 9, 1]\nlst.sort(reverse=True)\nprint("Sorted descending:", lst)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "27. Write a program to generate a list of squares for numbers in a given range." },
+        { type: "code", value: 'squares = [x**2 for x in range(1, 6)]\nprint("Squares:", squares)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "28. Write a program to separate even and odd numbers from a list into two distinct lists." },
+        { type: "code", value: 'lst = [1, 2, 3, 4, 5, 6]\nevens = [x for x in lst if x % 2 == 0]\nodds = [x for x in lst if x % 2 != 0]\nprint("Evens:", evens)\nprint("Odds:", odds)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "29. Write a program to create tuples and access elements." },
+        { type: "code", value: 'tup = (10, 20, 30, 40)\nprint("First element:", tup[0])\nprint("Last element:", tup[-1])' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "30. Write a program to check if an element exists inside a tuple." },
+        { type: "code", value: 'tup = ("apple", "banana", "cherry")\nprint("banana" in tup)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "31. Write a program to reverse the contents of a tuple." },
+        { type: "code", value: 'tup = (1, 2, 3, 4)\nrev_tup = tup[::-1]\nprint("Reversed tuple:", rev_tup)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "32. Write a program to clean a list by removing empty tuples." },
+        { type: "code", value: 'lst = [(), (1, 2), (), (3, 4), ()]\ncleaned = [t for t in lst if t]\nprint("Cleaned list:", cleaned)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "33. Write a program to convert a tuple of characters into a single string." },
+        { type: "code", value: 'tup = ("W", "3", "C", "o", "d", "e", "r")\nresult = "".join(tup)\nprint("Converted string:", result)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "34. Write a program to create a set and add new elements to it." },
+        { type: "code", value: 'my_set = {1, 2, 3}\nmy_set.add(4)\nprint("Updated set:", my_set)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "35. Write a program to remove specific items from a set." },
+        { type: "code", value: 'my_set = {10, 20, 30}\nmy_set.discard(20)\nprint("Set after removal:", my_set)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "36. Write a program to find union and intersection of sets." },
+        { type: "code", value: 'set1 = {1, 2, 3}\nset2 = {2, 3, 4}\nprint("Union:", set1 | set2)\nprint("Intersection:", set1 & set2)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "37. Write a program to find the total count of elements in a set." },
+        { type: "code", value: 'my_set = {10, 20, 30, 40}\nprint("Length of set:", len(my_set))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "38. Write a program to clear all items from a set." },
+        { type: "code", value: 'my_set = {1, 2, 3}\nmy_set.clear()\nprint("Cleared set:", my_set)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "39. Write a program to create a dictionary with numbers as keys and their squares as values." },
+        { type: "code", value: 'd = {x: x**2 for x in range(1, 4)}\nprint("Dictionary:", d)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "40. Write a program to map two lists into a single dictionary." },
+        { type: "code", value: 'keys = ["name", "age"]\nvalues = ["Adarsh", 22]\nd = dict(zip(keys, values))\nprint("Mapped dict:", d)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "41. Write a program to check if a specified key exists in a dictionary." },
+        { type: "code", value: 'd = {"a": 1, "b": 2}\nprint("a" in d)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "42. Write a program to delete a key-value pair from a dictionary." },
+        { type: "code", value: 'd = {"a": 1, "b": 2}\nd.pop("a")\nprint("Dict after deletion:", d)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "43. Write a program to find keys associated with max and min values in a dictionary." },
+        { type: "code", value: 'd = {"x": 10, "y": 50, "z": 20}\nprint("Max key:", max(d, key=d.get))\nprint("Min key:", min(d, key=d.get))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "44. Write a program to reverse a given string." },
+        { type: "code", value: 's = "Python"\nprint("Reversed:", s[::-1])' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "45. Write a program to check whether two strings are anagrams of each other." },
+        { type: "code", value: 's1, s2 = "listen", "silent"\nis_anagram = sorted(s1) == sorted(s2)\nprint("Are anagrams:", is_anagram)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "46. Write a program to extract and list individual characters from a string." },
+        { type: "code", value: 's = "Code"\nchars = list(s)\nprint("Characters:", chars)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "47. Write a program to split a string into specific segments." },
+        { type: "code", value: 's = "Hello World Python"\nwords = s.split()\nprint("Split words:", words)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "48. Write a program to count vowels and consonants in a string." },
+        { type: "code", value: 's = "W3coder"\nvowels = sum(1 for c in s.lower() if c in "aeiou")\nconsonants = sum(1 for c in s.lower() if c.isalpha() and c not in "aeiou")\nprint(f"Vowels: {vowels}, Consonants: {consonants}")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "49. Write a program to open and read the contents of a text file." },
+        { type: "code", value: '# with open("test.txt", "r") as f:\n#     print(f.read())' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "50. Write a program to append new text data to an existing file." },
+        { type: "code", value: '# with open("test.txt", "a") as f:\n#     f.write("\\nNew Line Added")' }
+      ]
+    },
+
+    {
+      content: [
+        { type: "text", value: "51. Write a Python function to calculate the cube of any given number." },
+        { type: "code", value: 'def cube(n):\n    return n ** 3\nprint("Cube:", cube(3))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "52. Write a function that takes two numbers and returns their sum." },
+        { type: "code", value: 'def add(a, b):\n    return a + b\nprint("Sum:", add(5, 10))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "53. Write a function to calculate the average of three numbers." },
+        { type: "code", value: 'def average(a, b, c):\n    return (a + b + c) / 3\nprint("Average:", average(10, 20, 30))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "54. Write separate functions for arithmetic operations to build a modular calculator." },
+        { type: "code", value: 'def calc(a, b, op):\n    if op == "+": return a + b\n    elif op == "-": return a - b\nprint("Result:", calc(10, 5, "-"))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "55. Write a function demonstrating default parameters for calculating simple interest." },
+        { type: "code", value: 'def simple_interest(p, r=5, t=2):\n    return (p * r * t) / 100\nprint("Interest:", simple_interest(1000))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "56. Write a recursive function to compute the factorial of a number." },
+        { type: "code", value: 'def fact(n):\n    if n == 0 or n == 1: return 1\n    return n * fact(n - 1)\nprint("Factorial:", fact(5))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "57. Write a recursive function to generate the n-th Fibonacci term." },
+        { type: "code", value: 'def fib(n):\n    if n <= 1: return n\n    return fib(n-1) + fib(n-2)\nprint("Fib term:", fib(6))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "58. Write a lambda function to square a number." },
+        { type: "code", value: 'square = lambda x: x ** 2\nprint("Square:", square(6))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "59. Write a program using a lambda function with map() to double list items." },
+        { type: "code", value: 'lst = [1, 2, 3, 4]\nres = list(map(lambda x: x * 2, lst))\nprint("Doubled:", res)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "60. Write a program using a lambda function with filter() to extract even numbers." },
+        { type: "code", value: 'lst = [1, 2, 3, 4, 5]\nres = list(filter(lambda x: x % 2 == 0, lst))\nprint("Evens:", res)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "61. Write a program to create NumPy arrays and inspect their data types and shape." },
+        { type: "code", value: 'import numpy as np\narr = np.array([1, 2, 3])\nprint("Dtype:", arr.dtype, "Shape:", arr.shape)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "62. Write a program using np.arange() and np.reshape() to manipulate array dimensions." },
+        { type: "code", value: 'import numpy as np\narr = np.arange(6).reshape(2, 3)\nprint(arr)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "63. Write a program to perform ceil, floor, and around mathematical operations using NumPy." },
+        { type: "code", value: 'import numpy as np\narr = np.array([1.2, 3.8, 5.5])\nprint("Ceil:", np.ceil(arr))\nprint("Floor:", np.floor(arr))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "64. Write a program to create matrices and perform matrix addition." },
+        { type: "code", value: 'import numpy as np\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6], [7, 8]])\nprint("Sum:\\n", a + b)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "65. Write a program to perform matrix multiplication." },
+        { type: "code", value: 'import numpy as np\na = np.array([[1, 2], [3, 4]])\nb = np.array([[5, 6], [7, 8]])\nprint("Dot Product:\\n", np.dot(a, b))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "66. Write a program to find the transpose of a matrix and its diagonal sum." },
+        { type: "code", value: 'import numpy as np\na = np.array([[1, 2], [3, 4]])\nprint("Transpose:\\n", a.T)\nprint("Diagonal Sum:", np.trace(a))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "67. Write a program to count lines, words, and characters in a file." },
+        { type: "code", value: '# with open("test.txt", "r") as f:\n#     content = f.read()\n#     print("Words:", len(content.split()))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "68. Write a program to copy contents from one text file to another." },
+        { type: "code", value: '# with open("source.txt", "r") as s, open("dest.txt", "w") as d:\n#     d.write(s.read())' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "69. Write a program to write multiplication tables into a text file." },
+        { type: "code", value: '# with open("Table.txt", "w") as f:\n#     for i in range(1, 11):\n#         f.write(f"5 x {i} = {5*i}\\n")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "70. Write a program to read numbers from a text file and calculate their sum." },
+        { type: "code", value: '# with open("sum.txt", "r") as f:\n#     total = sum(int(line) for line in f)\n#     print("Total:", total)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "71. Write a program to write and read objects using binary files (pickle module)." },
+        { type: "code", value: 'import pickle\ndata = {"a": 1, "b": 2}\n# with open("file.pkl", "wb") as f: pickle.dump(data, f)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "72. Write a program to search for a specific word in a file and replace it." },
+        { type: "code", value: '# with open("test.txt", "r") as f: text = f.read()\n# new_text = text.replace("old", "new")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "73. Write a program to remove duplicate characters from a string." },
+        { type: "code", value: 's = "programming"\nres = "".join(sorted(set(s), key=s.index))\nprint(res)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "74. Write a program to count occurrences of a specific substring." },
+        { type: "code", value: 's = "banana"\nprint("Count:", s.count("an"))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "75. Write a program to capitalize the first letter of each word in a string." },
+        { type: "code", value: 's = "python programming language"\nprint(s.title())' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "76. Write a program to find the longest word in a given sentence." },
+        { type: "code", value: 'sent = "Learn Python programming easily"\nwords = sent.split()\nprint("Longest:", max(words, key=len))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "77. Write a program to remove all punctuation from a string." },
+        { type: "code", value: 'import string\ns = "Hello, World! Welcome..."\nres = "".join(c for c in s if c not in string.punctuation)\nprint(res)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "78. Write a program to merge two sorted lists into a single sorted list." },
+        { type: "code", value: 'l1 = [1, 3, 5]\nl2 = [2, 4, 6]\nprint("Merged:", sorted(l1 + l2))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "79. Write a program to find the second largest number in a list." },
+        { type: "code", value: 'lst = [10, 20, 4, 45, 99]\nlst = list(set(lst))\nlst.sort()\nprint("Second largest:", lst[-2])' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "80. Write a program to remove duplicates from a list while preserving order." },
+        { type: "code", value: 'lst = [1, 2, 2, 3, 1, 4]\nprint(list(dict.fromkeys(lst)))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "81. Write a program to rotate a list by k positions." },
+        { type: "code", value: 'lst = [1, 2, 3, 4, 5]\nk = 2\nres = lst[k:] + lst[:k]\nprint("Rotated:", res)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "82. Write a program to flatten a nested list." },
+        { type: "code", value: 'nested = [[1, 2], [3, 4], [5]]\nflat = [item for sublist in nested for item in sublist]\nprint("Flattened:", flat)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "83. Write a program to check if a list is sorted in ascending order." },
+        { type: "code", value: 'lst = [1, 2, 3, 4]\nprint("Is sorted:", lst == sorted(lst))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "84. Write a program to find pairs in a list that sum up to a specific target." },
+        { type: "code", value: 'lst = [2, 4, 3, 5, 6, -2, 4, 7, 8, 9]\ntarget = 7\n# Find matching pairs' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "85. Write a program to implement a queue using a Python list." },
+        { type: "code", value: 'queue = []\nqueue.append(1) # Enqueue\nqueue.append(2)\nprint("Dequeued:", queue.pop(0))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "86. Write a program to implement a stack using a Python list." },
+        { type: "code", value: 'stack = []\nstack.append(1) # Push\nstack.append(2)\nprint("Popped:", stack.pop())' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "87. Write a program to sort a dictionary by its values." },
+        { type: "code", value: 'd = {"apple": 50, "banana": 20, "cherry": 30}\nsorted_d = dict(sorted(d.items(), key=lambda item: item[1]))\nprint(sorted_d)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "88. Write a program to combine two dictionaries by adding values for common keys." },
+        { type: "code", value: 'from collections import Counter\nd1 = Counter({"a": 10, "b": 20})\nd2 = Counter({"b": 30, "c": 40})\nprint(dict(d1 + d2))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "89. Write a program to find the most frequent element in a list." },
+        { type: "code", value: 'lst = [1, 2, 3, 2, 2, 4, 1]\nprint("Most frequent:", max(set(lst), key=lst.count))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "90. Write a program to check if all values in a dictionary are equal." },
+        { type: "code", value: 'd = {"a": 5, "b": 5, "c": 5}\nprint(len(set(d.values())) <= 1)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "91. Write a program to create a class and object in Python." },
+        { type: "code", value: 'class Student:\n    name = "Adarsh"\ns = Student()\nprint(s.name)' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "92. Write a program to demonstrate single inheritance in Python." },
+        { type: "code", value: 'class Parent:\n    def show(s): print("Parent")\nclass Child(Parent):\n    pass\nChild().show()' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "93. Write a program to demonstrate encapsulation using private variables." },
+        { type: "code", value: 'class Account:\n    def __init__(self): self.__bal = 1000\n    def get_bal(self): return self.__bal\nprint(Account().get_bal())' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "94. Write a program to demonstrate polymorphism with method overriding." },
+        { type: "code", value: 'class Cat:\n    def sound(self): return "Meow"\nclass Dog:\n    def sound(self): return "Bark"\nprint(Cat().sound(), Dog().sound())' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "95. Write a program to demonstrate abstraction using the abc module." },
+        { type: "code", value: 'from abc import ABC, abstractmethod\nclass Shape(ABC):\n    @abstractmethod\n    def draw(self): pass' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "96. Write a program to catch and handle exceptions using try-except." },
+        { type: "code", value: 'try:\n    print(10 / 0)\nexcept ZeroDivisionError:\n    print("Cannot divide by zero!")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "97. Write a program using try-except-finally blocks." },
+        { type: "code", value: 'try:\n    print("Processing...")\nfinally:\n    print("Cleanup executed.")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "98. Write a program to raise a custom exception based on a condition." },
+        { type: "code", value: 'age = 15\nif age < 18:\n    raise ValueError("Age must be at least 18")' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "99. Write a program to create and use a generator function using yield." },
+        { type: "code", value: 'def count_up_to(max):\n    count = 1\n    while count <= max:\n        yield count\n        count += 1\nprint(list(count_up_to(3)))' }
+      ]
+    },
+    {
+      content: [
+        { type: "text", value: "100. Write a program demonstrating list comprehensions vs generator expressions." },
+        { type: "code", value: 'gen = (x**2 for x in range(5))\nprint("Generator object:", gen)' }
+      ]
     }
+  ],
+
+  conclusion: "Congratulations! You have officially completed all 100 Python coding questions. You now have the core foundation, syntax reflexes, and algorithmic problem-solving skills required to excel in Python development and technical coding assessments."
+  
+
+  
+}
      ],
      };
 
